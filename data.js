@@ -5,10 +5,10 @@ const portfolioData = {
         email: "goen1182@gmail.com",
         phone: "+82 10-5673-1182",
         role: { en: "Bio Statistics & Software Engineer", kr: "생물통계 및 소프트웨어 엔지니어" },
-        about: {
-            en: "I am a researcher specializing in Bio Statistics and Big Data. I focus on developing deep learning models, such as 1-D CNNs, for biological signal processing and disease classification using clinical and wearable sensor data.",
-            kr: "임상의학통계학과 빅데이터를 전공한 연구원입니다. 임상 데이터 및 웨어러블 센서 데이터를 활용하여, 1-D CNN과 같은 딥러닝 기반의 생체 신호 처리 및 질병 분류 모델을 연구하고 개발합니다."
-        }
+        // about: {
+        //     en: "I am a researcher specializing in Bio Statistics and Big Data. I focus on developing deep learning models, such as 1-D CNNs, for biological signal processing and disease classification using clinical and wearable sensor data.",
+        //     kr: "임상의학통계학과 빅데이터를 전공한 연구원입니다. 임상 데이터 및 웨어러블 센서 데이터를 활용하여, 1-D CNN과 같은 딥러닝 기반의 생체 신호 처리 및 질병 분류 모델을 연구하고 개발합니다."
+        // }
     },
     education: [
         {
