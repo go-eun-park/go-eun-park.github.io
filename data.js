@@ -4,7 +4,7 @@ const portfolioData = {
         name: { en: "Goeun Park", kr: "박고은" },
         email: "goen1182@gmail.com",
         phone: "+82 10-5673-1182",
-        role: { en: "Bio Statistics & Software Engineer", kr: "생물통계 및 소프트웨어 엔지니어" },
+        // role: { en: "Bio Statistics & Software Engineer", kr: "생물통계 및 소프트웨어 엔지니어" },
         // about: {
         //     en: "I am a researcher specializing in Bio Statistics and Big Data. I focus on developing deep learning models, such as 1-D CNNs, for biological signal processing and disease classification using clinical and wearable sensor data.",
         //     kr: "임상의학통계학과 빅데이터를 전공한 연구원입니다. 임상 데이터 및 웨어러블 센서 데이터를 활용하여, 1-D CNN과 같은 딥러닝 기반의 생체 신호 처리 및 질병 분류 모델을 연구하고 개발합니다."
@@ -53,45 +53,56 @@ const portfolioData = {
             }
         }
     ],
+    publications: [
+        {
+            year: "2025",
+            title: "Comparative analysis of RGB and infrared imaging photoplethysmography using traditional and deep learning approaches across various frame rates",
+            authors: "Sunghan Lee, Jeonghwan Koh, Suyeon Yun, Jinwon Kim, Seoyeong Lee, Goeun Park, Ung Park, Seokjue Jeong, In cheol Jeong",
+            journal: "Digital Health Research, vol. 3, no. 1",
+            type: "Journal Article",
+            doi: "https://doi.org/10.61499/dhr.2025.3.e1"
+        },
+        {
+            year: "2025",
+            title: "Patch-type wearable electrocardiography and impedance pneumography for sleep staging: A multi-modal deep learning approach",
+            authors: "Sunghan Lee, Ung Park, Suyeon Yun, Goeun Park, Sung Pil Cho, Kyung Min Kim, In cheol Jeong",
+            journal: "Computers in Biology and Medicine, vol. 195",
+            type: "Journal Article (SCIE)",
+            doi: "https://doi.org/10.1016/j.compbiomed.2025.110452"
+        },
+        {
+            year: "2025",
+            title: "AI-Enabled Speech Monitoring for Dysarthria Detection in Consumer Electronics",
+            authors: "Seoyeong Lee, Sunghan Lee, Goeun Park, Dong-Ok Won, Chul-Ho Kim, Jae-Jun Lee, In cheol Jeong",
+            journal: "2025 IEEE International Conference on Consumer Electronics (ICCE)",
+            type: "Conference Proceedings",
+            doi: "https://doi.org/10.1109/ICCE63647.2025.10929844"
+        }
+    ],
     patents: [
         {
             date: "2025.11",
-            title: { 
-                en: "Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", 
-                kr: "보행 데이터 기반 만성 신장 질환 검출 장치 및 방법" 
-            },
+            title: { en: "Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", kr: "보행 데이터 기반 만성 신장 질환 검출 장치 및 방법" },
             detail: "PCT/KR2025/019785 (International Patent Application, PCT)"
         },
         {
             date: "2025.10",
-            title: { 
-                en: "Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", 
-                kr: "보행 데이터 기반 만성 신장 질환 검출 장치 및 방법" 
-            },
+            title: { en: "Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", kr: "보행 데이터 기반 만성 신장 질환 검출 장치 및 방법" },
             detail: "App. No: 10-2025-0147970 (South Korea)"
         },
         {
             date: "2025.10",
-            title: { 
-                en: "Walking Data-Based Biomarker For Detecting Kidney Disease, Extraction Apparatus And Method Thereof", 
-                kr: "신장 질환 검출을 위한 보행 데이터 기반 바이오마커, 이의 추출 장치 및 방법" 
-            },
+            title: { en: "Walking Data-Based Biomarker For Detecting Kidney Disease, Extraction Apparatus And Method Thereof", kr: "신장 질환 검출을 위한 보행 데이터 기반 바이오마커, 이의 추출 장치 및 방법" },
             detail: "App. No: 10-2025-0147971 (South Korea)"
         },
         {
             date: "2025.09",
-            title: { 
-                en: "Apparatus And Method For Classifying Sleep Stages Based On Electrocardiogram And Impedance Plethysmography", 
-                kr: "심전도 및 호흡 임피던스 기반 수면 단계 분류 장치 및 방법" 
-            },
+            title: { en: "Apparatus And Method For Classifying Sleep Stages Based On Electrocardiogram And Impedance Plethysmography", kr: "심전도 및 호흡 임피던스 기반 수면 단계 분류 장치 및 방법" },
             detail: "App. No: 10-2025-0132934 (South Korea)"
         },
         {
             date: "2025.06",
-            title: { 
-                en: "Apparatus And Method For Disease Classification Based On Voice Data", 
-                kr: "음성 데이터 기반 질환 분류 장치 및 방법" 
-            },
+            title: { en: "Apparatus And Method For Disease Classification Based On Voice Data", kr: "음성 데이터 기반 질환 분류 장치 및 방법" },
             detail: "App. No: 10-2025-0085420 (South Korea)"
         }
     ],
@@ -105,26 +116,6 @@ const portfolioData = {
             date: "2025.08",
             title: { en: "Sleep Tracker v1", kr: "Sleep Tracker v1" },
             detail: "Reg No: C-2025-030887 (South Korea)"
-        }
-    ],
-    publications: [
-        {
-            year: "2025",
-            title: "Comparative analysis of RGB and infrared imaging photoplethysmography using traditional and deep learning approaches across various frame rates",
-            journal: "Digital Health Research, vol. 3, no. 1",
-            type: "Journal Article"
-        },
-        {
-            year: "2025",
-            title: "Patch-type wearable electrocardiography and impedance pneumography for sleep staging: A multi-modal deep learning approach",
-            journal: "Computers in Biology and Medicine, vol. 195",
-            type: "Journal Article (SCIE)"
-        },
-        {
-            year: "2025",
-            title: "Ai-enabled speech monitoring for dysarthria detection in consumer electronics",
-            journal: "2025 IEEE International Conference on Consumer Electronics (ICCE)",
-            type: "Conference Proceedings"
         }
     ],
     awards: [
