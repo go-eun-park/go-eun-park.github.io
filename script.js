@@ -1,107 +1,121 @@
 // script.js
 let currentLang = 'en';
 
-// 💡 핵심 기능 1: 이름 자동 인식 및 하이라이트 (Goeun Park, G. Park, 박고은 모두 대응)
+// 💡 이름 하이라이트 (데이터가 없어도 에러 안 나게 방어)
 function highlightName(text) {
     if (!text) return "";
     return text.replace(/(Goeun Park|G\.\s*Park|박고은)/gi, '<strong style="color: #2980b9; text-decoration: underline;">$1</strong>');
 }
 
-// 💡 핵심 기능 2: 안전한 텍스트 렌더링 (HTML 요소가 없어도 에러 안 남)
+// 💡 텍스트 안전 삽입 (태그가 없어도 에러 안 나게 방어)
 function safeSetText(id, text) {
     const el = document.getElementById(id);
-    if (el) el.textContent = text;
+    if (el) el.textContent = text || "";
+}
+
+// 💡 리스트 안전 렌더링 (배열 데이터가 누락되어도 에러 안 나게 방어)
+function renderList(id, dataArray, renderItem) {
+    const container = document.getElementById(id);
+    if (container) {
+        container.innerHTML = '';
+        if (Array.isArray(dataArray)) {
+            dataArray.forEach(item => {
+                container.innerHTML += renderItem(item);
+            });
+        }
+    }
 }
 
 function renderContent() {
-    // 1. 기본 정보
-    safeSetText('name', portfolioData.basicInfo.name[currentLang]);
-    safeSetText('role', portfolioData.basicInfo.role[currentLang]);
-    safeSetText('about-text', portfolioData.basicInfo.about[currentLang]);
-    safeSetText('contact-info', `📧 ${portfolioData.basicInfo.email} | 📞 ${portfolioData.basicInfo.phone}`);
+    // 1. 기본 정보 안전하게 불러오기 (데이터 없으면 빈칸 처리)
+    const info = portfolioData.basicInfo || {};
+    const nameObj = info.name || {en: '', kr: ''};
+    const roleObj = info.role || {en: '', kr: ''};
+    const aboutObj = info.about || {en: '', kr: ''};
 
-    // 각 섹션 렌더링 로직
-    const containers = {
-        edu: document.getElementById('education-list'),
-        work: document.getElementById('work-list'),
-        pub: document.getElementById('publication-list'),
-        pat: document.getElementById('patent-list'),
-        copy: document.getElementById('copyright-list'),
-        award: document.getElementById('award-list'),
-        act: document.getElementById('activity-list'),
-        skill: document.getElementById('skill-list')
-    };
+    safeSetText('name', nameObj[currentLang]);
+    safeSetText('role', roleObj[currentLang]);
+    safeSetText('about-text', aboutObj[currentLang]);
+    safeSetText('contact-info', `📧 ${info.email || ''} | 📞 ${info.phone || ''}`);
 
     // 2. 학력
-    if (containers.edu) {
-        containers.edu.innerHTML = '';
-        portfolioData.education.forEach(edu => {
-            containers.edu.innerHTML += `<div class="item"><div class="item-title">${edu.school[currentLang]}</div><div class="item-meta">${edu.period}</div><div>${edu.degree[currentLang]}<br><small>${edu.desc[currentLang]}</small></div></div>`;
-        });
-    }
+    renderList('education-list', portfolioData.education, edu => `
+        <div class="item">
+            <div class="item-title">${(edu.school || {})[currentLang] || ''}</div>
+            <div class="item-meta">${edu.period || ''}</div>
+            <div>${(edu.degree || {})[currentLang] || ''}<br><small>${(edu.desc || {})[currentLang] || ''}</small></div>
+        </div>
+    `);
 
     // 3. 업무 경험
-    if (containers.work) {
-        containers.work.innerHTML = '';
-        portfolioData.workExperience.forEach(work => {
-            containers.work.innerHTML += `<div class="item"><div class="item-title">${work.role[currentLang]} @ ${work.org[currentLang]}</div><div class="item-meta">${work.period}</div><div>${work.desc[currentLang]}</div></div>`;
-        });
-    }
+    renderList('work-list', portfolioData.workExperience, work => `
+        <div class="item">
+            <div class="item-title">${(work.role || {})[currentLang] || ''} @ ${(work.org || {})[currentLang] || ''}</div>
+            <div class="item-meta">${work.period || ''}</div>
+            <div>${(work.desc || {})[currentLang] || ''}</div>
+        </div>
+    `);
 
-    // 4. 출판물(논문) - DOI 링크 (새 탭 열기) 포함
-    if (containers.pub) {
-        containers.pub.innerHTML = '';
-        portfolioData.publications.forEach(pub => {
-            const authors = highlightName(pub.authors);
-            // DOI가 있으면 링크로, 없으면 일반 텍스트로 처리
-            const titleHtml = pub.doi ? `<a href="${pub.doi}" target="_blank" style="color: #34495e; text-decoration: underline;">🔗 ${pub.title}</a>` : pub.title;
-            containers.pub.innerHTML += `<div class="item"><div class="item-title">${titleHtml}</div><div style="font-size: 0.95em; color: #555;">${authors}</div><div class="item-meta">${pub.year} | ${pub.journal} [${pub.type}]</div></div>`;
-        });
-    }
+    // 4. 출판물(논문) - 새 탭 링크 기능 포함
+    renderList('publication-list', portfolioData.publications, pub => {
+        const authors = highlightName(pub.authors);
+        const titleHtml = pub.doi ? `<a href="${pub.doi}" target="_blank" style="color: #34495e; text-decoration: underline;">🔗 ${pub.title}</a>` : pub.title;
+        return `<div class="item">
+            <div class="item-title">${titleHtml}</div>
+            <div style="font-size: 0.95em; color: #555;">${authors}</div>
+            <div class="item-meta">${pub.year} | ${pub.journal} [${pub.type}]</div>
+        </div>`;
+    });
 
-    // 5. 특허 - 발명자 하이라이트 추가
-    if (containers.pat) {
-        containers.pat.innerHTML = '';
-        portfolioData.patents.forEach(pat => {
-            const authors = highlightName(pat.authors[currentLang]);
-            containers.pat.innerHTML += `<div class="item"><div class="item-title">${pat.title[currentLang]}</div><div style="font-size: 0.95em; color: #555;">${authors}</div><div class="item-meta">${pat.date} | ${pat.detail}</div></div>`;
-        });
-    }
+    // 5. 특허
+    renderList('patent-list', portfolioData.patents, pat => {
+        const authorText = pat.authors ? pat.authors[currentLang] : '';
+        const authors = highlightName(authorText);
+        return `<div class="item">
+            <div class="item-title">${(pat.title || {})[currentLang] || ''}</div>
+            <div style="font-size: 0.95em; color: #555;">${authors}</div>
+            <div class="item-meta">${pat.date} | ${pat.detail}</div>
+        </div>`;
+    });
 
-    // 6. 저작권 - 저자 하이라이트 추가
-    if (containers.copy) {
-        containers.copy.innerHTML = '';
-        portfolioData.copyrights.forEach(copy => {
-            const authors = highlightName(copy.authors[currentLang]);
-            containers.copy.innerHTML += `<div class="item"><div class="item-title">${copy.title[currentLang]}</div><div style="font-size: 0.95em; color: #555;">${authors}</div><div class="item-meta">${copy.date} | ${copy.detail}</div></div>`;
-        });
-    }
+    // 6. 소프트웨어 저작권
+    renderList('copyright-list', portfolioData.copyrights, copy => {
+        const authorText = copy.authors ? copy.authors[currentLang] : '';
+        const authors = highlightName(authorText);
+        return `<div class="item">
+            <div class="item-title">${(copy.title || {})[currentLang] || ''}</div>
+            <div style="font-size: 0.95em; color: #555;">${authors}</div>
+            <div class="item-meta">${copy.date} | ${copy.detail}</div>
+        </div>`;
+    });
 
     // 7. 수상
-    if (containers.award) {
-        containers.award.innerHTML = '';
-        portfolioData.awards.forEach(award => {
-            containers.award.innerHTML += `<div class="item"><div class="item-title">${award.title[currentLang]}</div><div class="item-meta">${award.year} | ${award.org[currentLang]}</div></div>`;
-        });
-    }
+    renderList('award-list', portfolioData.awards, award => `
+        <div class="item">
+            <div class="item-title">${(award.title || {})[currentLang] || ''}</div>
+            <div class="item-meta">${award.year} | ${(award.org || {})[currentLang] || ''}</div>
+        </div>
+    `);
 
     // 8. 활동
-    if (containers.act) {
-        containers.act.innerHTML = '';
-        portfolioData.activities.forEach(act => {
-            containers.act.innerHTML += `<div class="item"><div class="item-title">${act.role[currentLang]}</div><div class="item-meta">${act.period} | ${act.org[currentLang]}</div></div>`;
-        });
-    }
+    renderList('activity-list', portfolioData.activities, act => `
+        <div class="item">
+            <div class="item-title">${(act.role || {})[currentLang] || ''}</div>
+            <div class="item-meta">${act.period} | ${(act.org || {})[currentLang] || ''}</div>
+        </div>
+    `);
 
     // 9. 스킬
-    if (containers.skill) {
-        containers.skill.innerHTML = '';
-        portfolioData.skills[currentLang].forEach(skill => {
-            containers.skill.innerHTML += `<li>${skill}</li>`;
+    const skillContainer = document.getElementById('skill-list');
+    if (skillContainer) {
+        skillContainer.innerHTML = '';
+        const skills = (portfolioData.skills || {})[currentLang] || [];
+        skills.forEach(skill => {
+            skillContainer.innerHTML += `<li>${skill}</li>`;
         });
     }
 
-    // 섹션 제목 다국어 처리
+    // 10. 제목 세팅
     safeSetText('title-about', currentLang === 'en' ? 'About Me' : '소개');
     safeSetText('title-edu', currentLang === 'en' ? 'Education' : '학력');
     safeSetText('title-work', currentLang === 'en' ? 'Work Experience' : '연구 및 업무 경험');
@@ -113,12 +127,12 @@ function renderContent() {
     safeSetText('title-skill', currentLang === 'en' ? 'Skills' : '보유 기술');
 }
 
-// 토글 버튼
+// 언어 토글 버튼 이벤트
 document.getElementById('lang-toggle').addEventListener('click', (e) => {
     currentLang = currentLang === 'en' ? 'kr' : 'en';
     e.target.textContent = currentLang === 'en' ? 'KOR' : 'ENG';
     renderContent();
 });
 
-// 시작
+// 초기 실행
 renderContent();
