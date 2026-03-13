@@ -34,8 +34,8 @@ html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.7;font-size:15px;overflow-x:hidden;word-break:keep-all;transition:background .25s,color .25s}
 
 /* ── TOP BAR (Switch UI 개선) ── */
-.top-bar{position:fixed;top:20px;right:24px;z-index:1000;display:flex;align-items:center;gap:12px}
-.toggle-group{display:flex;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:100px;padding:4px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.top-bar{position:absolute;top:20px;right:24px;z-index:1000;display:flex;align-items:center;gap:12px}
+  .toggle-group{display:flex;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:100px;padding:4px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 [data-theme="dark"] .toggle-group{background:rgba(30,32,33,.8)}
 .toggle-btn{background:transparent;border:none;padding:5px 12px;font-family:var(--fb);font-size:12.5px;font-weight:600;color:var(--ink-faint);border-radius:100px;cursor:pointer;transition:all .2s}
 .toggle-btn.active{background:var(--ink);color:var(--cream);box-shadow:0 2px 8px rgba(0,0,0,.15)}
@@ -226,8 +226,23 @@ strong.highlight{color:var(--accent);font-weight:700}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){:root{--sw:240px}.hero-section,.content-section{padding:40px 40px}.timeline-item{grid-template-columns:140px 1fr}.timeline-item::before{left:140px}.timeline-item::after{left:136px}}
-@media(max-width:720px){.sidebar{display:none}.mobile-header{display:flex}.mobile-drawer{display:block}.top-bar{top:76px;right:16px}.main-content{margin-left:0;padding-top:66px}.hero-section,.content-section{padding:32px 20px}.hero-text{font-size:1.05rem}:lang(ko) .hero-text{font-size:.98rem}.section-title{font-size:1.3rem}.timeline-item{grid-template-columns:1fr;gap:6px}.timeline-item::before,.timeline-item::after{display:none}.timeline-right{padding-left:0}.pub-item{grid-template-columns:32px 1fr;gap:0 12px}.ip-item{grid-template-columns:1fr;gap:4px}.skill-item{grid-template-columns:1fr;gap:6px}.award-grid{grid-template-columns:1fr}.training-header{flex-direction:column;gap:8px}.training-meta-block{text-align:left}.page-footer{padding:24px 20px}.project-header{grid-template-columns:1fr}.project-badges{flex-direction:row;align-items:flex-start}.project-header,.project-body,.sub-project{padding-left:20px;padding-right:20px}.project-divider{margin:0 20px}}
+@media(max-width:720px){.sidebar{display:none}.mobile-header{display:flex}.mobile-drawer{display:block}.top-bar{position:absolute;top:76px;right:16px}.main-content{margin-left:0;padding-top:66px}.hero-section,.content-section{padding:32px 20px}.hero-text{font-size:1.05rem}:lang(ko) .hero-text{font-size:.98rem}.section-title{font-size:1.3rem}.timeline-item{grid-template-columns:1fr;gap:6px}.timeline-item::before,.timeline-item::after{display:none}.timeline-right{padding-left:0}.pub-item{grid-template-columns:32px 1fr;gap:0 12px}.ip-item{grid-template-columns:1fr;gap:4px}.skill-item{grid-template-columns:1fr;gap:6px}.award-grid{grid-template-columns:1fr}.training-header{flex-direction:column;gap:8px}.training-meta-block{text-align:left}.page-footer{padding:24px 20px}.project-header{grid-template-columns:1fr}.project-badges{flex-direction:row;align-items:flex-start}.project-header,.project-body,.sub-project{padding-left:20px;padding-right:20px}.project-divider{margin:0 20px}}
 @media(max-width:480px){.hero-section,.content-section{padding:28px 16px}}
+
+/* ── TOP BUTTON ── */
+#btn-top {
+  position: fixed; bottom: 30px; right: 30px; z-index: 999;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--ink); color: var(--cream);
+  border: none; font-size: 20px; font-weight: bold;
+  cursor: pointer; opacity: 0; pointer-events: none;
+  transform: translateY(10px); transition: all 0.3s var(--ease);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center;
+}
+#btn-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#btn-top:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(0,0,0,0.25); }
+[data-theme="dark"] #btn-top { background: var(--accent); color: #fff; }
+@media(max-width:720px) { #btn-top { bottom: 20px; right: 20px; width: 40px; height: 40px; font-size: 18px; } }
 </style>
 </head>
 <body>
@@ -390,9 +405,8 @@ const D = {
     name:{en:"Goeun Park",kr:"박고은"},
     role:{en:"Researcher · Engineer",kr:"연구원 · 엔지니어"},
     about:{
-      // 💡 자기소개(About) 텍스트 전면 개선
-      en:"I am a researcher and software engineer bridging the gap between data science and practical application. With a dual degree in Bio-Statistics/Data Science and Software Engineering, I have experience across the entire data lifecycle—from deep learning-based clinical AI research to full-stack web development. Whether building wearable biosignal models or leading a team to create an unserved recommendation system, I thrive on tackling complex problems and building solutions that create tangible impact.",
-      kr:"데이터 사이언스와 소프트웨어 공학을 복수전공하며, 데이터 이면의 의미를 찾는 분석에서부터 실제 사용자를 위한 서비스 구현까지 전체 사이클을 경험한 연구원 겸 엔지니어입니다. 임상 데이터와 생체 신호를 활용한 딥러닝 AI 모델링(RLRC 연구원)은 물론, 풀스택 웹 서비스 개발과 해커톤 기획까지 분야에 경계를 두지 않고 도전해왔습니다. 복잡한 문제를 구조화하고, 기술을 통해 실질적인 해결책과 임팩트를 만들어내는 일에 가장 큰 즐거움을 느낍니다."
+      en:"I believe there are no useless experiences; every challenge I've taken on is a valuable 'data point' that builds my capabilities. Majoring in Bio-Statistics and Software Engineering, I have embraced diverse fields without boundaries—from deep learning research on clinical biosignals to developing full-stack web applications and leading hackathon teams. Through rigorous research, I learned the depth of persistent problem-solving; through practical projects, I expanded my breadth in collaboration and execution. By synthesizing these accumulated data points, I strive to be an engineer who analyzes complex problems multi-dimensionally and creates tangible, real-world impact.",
+      kr:"세상에 쓸모없는 경험은 없으며, 제가 부딪혀 온 모든 과정은 제 역량을 구성하는 고유한 '데이터'라고 믿습니다. 데이터사이언와 소프트웨어 공학을 전공하며 의료 신호를 분석하는 딥러닝 연구부터, 사용자와 맞닿은 웹 서비스 풀스택 개발, 그리고 팀을 이끄는 해커톤 기획까지 분야에 경계를 두지 않고 도전해 왔습니다. 연구를 통해 끈질기게 파고드는 깊이를 배웠고, 실무 프로젝트를 통해 협업과 문제 해결이라는 넓이를 더했습니다. 이 모든 경험의 데이터를 바탕으로, 어떤 복잡한 문제든 입체적으로 분석하고 실질적인 가치를 만들어내는 엔지니어로 나아가고 있습니다."
     }
   },
   education:[
@@ -803,6 +817,15 @@ document.querySelectorAll('section[id]').forEach(s=>{
 
 // 초기화
 render();
+  /* ── TOP BUTTON EVENT ── */
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300) $('btn-top').classList.add('show');
+  else $('btn-top').classList.remove('show');
+});
+$('btn-top').addEventListener('click', () => {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
 </script>
+  <button id="btn-top" aria-label="Go to top">↑</button>
 </body>
 </html>
