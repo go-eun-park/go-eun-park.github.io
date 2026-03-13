@@ -685,10 +685,20 @@ const hbg = $('hamburger'), drw = $('mobile-drawer');
 hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); drw.classList.toggle('open'); });
 document.querySelectorAll('.mob-nav-link').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); drw.classList.remove('open'); }));
 
-new IntersectionObserver(entries=>{
+// 스크롤 시 사이드바 메뉴 자동 하이라이트 기능 (정상화)
+const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting) document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    if(e.isIntersecting) {
+      document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    }
   });
-},{rootMargin:'-30% 0px -60% 0px'}).observe.bind(null);
+},{rootMargin:'-30% 0px -60% 0px'});
 
-// Ob
+document.querySelectorAll('.content-section').forEach(sec => observer.observe(sec));
+
+// ★ 가장 중요한 부분: 페이지가 열리자마자 데이터를 그려라! ★
+render();
+
+</script>
+</body>
+</html>
