@@ -107,15 +107,15 @@ body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:
 .pub-list{display:flex;flex-direction:column}
 .pub-item{display:grid;grid-template-columns:44px 1fr;gap:0 20px;padding:24px 0;border-bottom:1px solid var(--border);align-items:start}
 .pub-item:last-child{border-bottom:none}
-.pub-num{font-family:var(--fm);font-size:18px;font-weight:500;color:var(--border);text-align:right;padding-top:3px}
+.pub-num{font-family:var(--fm);font-size:18px;font-weight:500;color:#C8C2B8;text-align:right;padding-top:3px}
 .pub-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:8px}
 .pub-badge.scie{background:#FEF3C7;color:#92400E}
 .pub-badge.journal{background:#DBEAFE;color:#1E40AF}
 .pub-badge.conference{background:#F3E8FF;color:#6B21A8}
 .pub-title{font-size:14px;font-weight:600;color:var(--ink);line-height:1.5;margin-bottom:6px;text-decoration:none;display:block;transition:color .2s}
 a.pub-title:hover{color:var(--accent)}
-.pub-authors{font-size:12.5px;color:var(--ink-faint);margin-bottom:5px;line-height:1.5}
-.pub-meta{font-family:var(--fm);font-size:11px;color:var(--ink-faint);opacity:.7}
+.pub-authors{font-size:12.5px;color:var(--ink-light);margin-bottom:5px;line-height:1.5}
+.pub-meta{font-family:var(--fm);font-size:11px;color:var(--ink-faint)}
 
 /* IP & Others */
 .ip-list{display:flex;flex-direction:column}
@@ -155,6 +155,12 @@ a.pub-title:hover{color:var(--accent)}
 .skill-item:last-child{border-bottom:none}
 .skill-category{font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;padding-top:2px}
 .skill-content{font-size:13.5px;color:var(--ink-light);line-height:1.6}
+:lang(ko) .skill-category{font-family:'Noto Sans KR',system-ui,sans-serif;letter-spacing:.04em;text-transform:none;font-size:11.5px;font-weight:600}
+:lang(ko) .skill-content{font-family:'Noto Sans KR',system-ui,sans-serif;font-size:13px;line-height:1.75}
+:lang(ko) .project-kicker{font-family:'Noto Sans KR',system-ui,sans-serif;letter-spacing:.02em}
+:lang(ko) .project-meta{font-family:'Noto Sans KR',system-ui,sans-serif}
+:lang(ko) .timeline-period{font-family:'Noto Sans KR',system-ui,sans-serif;font-size:11px}
+:lang(ko) .sub-num{font-family:'Noto Sans KR',system-ui,sans-serif}
 
 /* Projects */
 .project-entry{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:20px;background:#fff;transition:box-shadow .25s var(--ease)}
@@ -182,12 +188,12 @@ a.pub-title:hover{color:var(--accent)}
 .sub-desc{font-size:12.5px;color:var(--ink-faint);line-height:1.65;margin-bottom:8px}
 .sub-tags{display:flex;flex-wrap:wrap;gap:5px}
 .sub-tag{font-family:var(--fm);font-size:10px;color:var(--ink-faint);background:var(--cream);border:1px solid var(--border);border-radius:3px;padding:2px 7px}
-.sub-result{display:inline-block;font-family:var(--fm);font-size:10.5px;padding:2px 8px;border-radius:3px;margin-bottom:6px}
+.sub-result{display:inline-block;font-family:'DM Sans','Noto Sans KR',system-ui,sans-serif;font-size:10.5px;font-weight:600;padding:2px 10px;border-radius:3px;margin-bottom:6px}
 .sub-result.gold{background:#FEF3C7;color:#92400E}
 .sub-result.blue{background:#DBEAFE;color:#1E40AF}
 .sub-result.green{background:#D1FAE5;color:#065F46}
 
-strong.highlight{color:var(--accent);font-weight:600}
+strong.highlight{color:#2A2A2A;font-weight:700}
 .page-footer{padding:32px 64px;font-size:12px;color:var(--ink-faint);opacity:.6;font-family:var(--fm)}
 
 /* 전체 스크롤바 세팅 */
@@ -223,8 +229,8 @@ strong.highlight{color:var(--accent);font-weight:600}
             </div>
         </div>
         <div class="contact-block">
-            <a href="mailto:go.eun.park@hallym.ac.kr" class="contact-item">
-                <span class="contact-icon">✉</span><span>go.eun.park@hallym.ac.kr</span>
+            <a href="mailto:goen1182@gmail.com" class="contact-item">
+                <span class="contact-icon">✉</span><span>goen1182@gmail.com</span>
             </a>
             <div class="contact-item">
                 <span class="contact-icon">✆</span><span>+82 10-5673-1182</span>
@@ -263,7 +269,7 @@ strong.highlight{color:var(--accent);font-weight:600}
 
 <div class="mobile-drawer" id="mobile-drawer">
     <div class="mobile-contact">
-        <a href="mailto:go.eun.park@hallym.ac.kr">go.eun.park@hallym.ac.kr</a>
+        <a href="mailto:goen1182@gmail.com">goen1182@gmail.com</a>
         <span>+82 10-5673-1182</span>
     </div>
     <nav>
@@ -357,191 +363,221 @@ const D = {
     name:  {en:"Goeun Park", kr:"박고은"},
     role:  {en:"Researcher · Engineer", kr:"연구원 · 엔지니어"},
     about: {
-      en:"I am a researcher specializing in Bio Statistics and Big Data, focusing on developing deep learning models — such as 1-D CNNs — for biological signal processing and disease classification using clinical and wearable sensor data.",
-      kr:"임상의학통계학과 빅데이터를 전공한 연구원입니다. 임상 데이터 및 웨어러블 센서 데이터를 활용하여, 1-D CNN과 같은 딥러닝 기반의 생체 신호 처리 및 질병 분류 모델을 연구하고 개발합니다."
+      en:"I am a researcher specializing in Bio Statistics and Big Data, with a focus on deep learning-based biosignal processing and clinical disease classification. My work spans wearable sensor data analysis, genomics-based feature selection, and non-contact physiological monitoring — translating healthcare data into interpretable, practical AI systems.",
+      kr:"임상의학통계학과 빅데이터를 전공한 연구원입니다. 웨어러블 센서 데이터 분석, 유전체 기반 변수 선택, 비접촉 생체 신호 모니터링 등 다양한 임상 데이터를 딥러닝 기반 AI 시스템으로 구현하는 연구를 수행합니다. 데이터에서 임상적으로 의미 있는 인사이트를 이끌어내는 것을 목표로 합니다."
     }
   },
   education:[
-    {period:"2020.03 - 2024.02",
-     school:{en:"Hallym University, Republic of Korea",kr:"한림대학교"},
-     degree:{en:"B.S. in Bio Statistics & Software (Double Major)",kr:"데이터사이언스(이학사) 및 소프트웨어(공학사) 복수전공"},
-     desc:{en:"Specialization: Bio Statistics in Clinical Medicine / Big Data",kr:"세부전공: 임상의학통계 / 빅데이터"}}
+    {period:"2020.03 – 2024.02",
+     school:{en:"Hallym University, Republic of Korea", kr:"한림대학교"},
+     degree:{en:"B.S. in Bio Statistics & Software (Double Major)", kr:"데이터사이언스(이학사) 및 소프트웨어(공학사) 복수전공"},
+     desc:{en:"Specialization: Bio Statistics in Clinical Medicine / Big Data", kr:"세부전공: 임상의학통계 / 빅데이터"}}
   ],
   work:[
-    {period:"2024.04 - 2025.08",
-     role:{en:"Research Assistant",kr:"연구원"},
-     org:{en:"Cardiovascular Disease Research Center (RLRC), Hallym University",kr:"한림대학교 Cardiovascular Disease Research Center (RLRC)"},
-     desc:{en:"Conducted AI research projects focused on disease prediction using healthcare big data. Key projects include IMU Gait Data-Based CKD Classification and Multimodal Biosignal-Based Sleep Staging.",kr:"의료 빅데이터 및 웨어러블 데이터를 활용한 질병 예측 AI 연구 수행. (보행 데이터 기반 만성 신장 질환 분류, 다중 생체 신호 기반 수면 단계 분류 등)"}},
-    {period:"2023.01 - 2024.02",
-     role:{en:"Undergraduate Intern",kr:"학부생 인턴"},
-     org:{en:"Dept. of Data Science, Hallym University",kr:"한림대학교 데이터사이언스학부 연구실"},
-     desc:{en:"Participated in cognitive ability analysis of MCI patients, applying MICE techniques for missing data imputation.",kr:"경도인지장애(MCI) 환자의 인지능력 변화 분석 연구 참여. MICE 기법을 활용한 결측치 처리 및 데이터 정제."}},
-    {period:"2021.09 - 2021.12",
-     role:{en:"Undergraduate Research Assistant",kr:"학부연구생"},
-     org:{en:"AI Team, Hallym University Chuncheon Sacred Heart Hospital",kr:"한림대학교 춘천성심병원 인공지능(AI) 팀"},
-     desc:{en:"Assisted in analyzing the association between sleep anesthesia drugs and patient delirium. Conducted basic clinical data preprocessing and EDA.",kr:"수면마취 약제 종류에 따른 환자의 섬망 증상 연관성 분석 보조. 기초 임상 데이터 전처리 및 탐색적 데이터 분석(EDA) 수행."}}
+    {period:"2024.04 – 2025.08",
+     role:{en:"Research Assistant", kr:"연구원"},
+     org:{en:"Cardiovascular Disease Research Center (RLRC), Hallym University", kr:"한림대학교 Cardiovascular Disease Research Center (RLRC)"},
+     desc:{en:"Conducted AI research projects focused on disease prediction using healthcare big data. Key projects include IMU Gait Data-Based CKD Classification and Multimodal Biosignal-Based Sleep Staging.", kr:"의료 빅데이터 및 웨어러블 데이터를 활용한 질병 예측 AI 연구 수행. (보행 데이터 기반 만성 신장 질환 분류, 다중 생체 신호 기반 수면 단계 분류 등)"}},
+    {period:"2023.01 – 2024.02",
+     role:{en:"Undergraduate Intern", kr:"학부생 인턴"},
+     org:{en:"Dept. of Data Science, Hallym University", kr:"한림대학교 데이터사이언스학부 연구실"},
+     desc:{en:"Participated in cognitive ability analysis of MCI patients, applying MICE techniques for missing data imputation.", kr:"경도인지장애(MCI) 환자의 인지능력 변화 분석 연구 참여. MICE 기법을 활용한 결측치 처리 및 데이터 정제."}},
+    {period:"2021.09 – 2021.12",
+     role:{en:"Undergraduate Research Assistant", kr:"학부연구생"},
+     org:{en:"AI Team, Hallym University Chuncheon Sacred Heart Hospital", kr:"한림대학교 춘천성심병원 인공지능(AI) 팀"},
+     desc:{en:"Assisted in analyzing the association between sleep anesthesia drugs and patient delirium. Conducted basic clinical data preprocessing and EDA.", kr:"수면마취 약제 종류에 따른 환자의 섬망 증상 연관성 분석 보조. 기초 임상 데이터 전처리 및 탐색적 데이터 분석(EDA) 수행."}}
   ],
   training:[
-    {period:"2022.06.27 - 2022.08.31", hours:360,
-     title:{en:"2022 Data Youth Campus",kr:"2022년 데이터 청년캠퍼스"},
-     org:{en:"Korea Data Industry Promotion Institute (K-DATA)",kr:"한국데이터산업진흥원"},
+    {period:"2022.06.27 – 2022.08.31", hours:360,
+     title:{en:"2022 Data Youth Campus", kr:"2022년 데이터 청년캠퍼스"},
+     org:{en:"Korea Data Industry Promotion Institute (K-DATA)", kr:"한국데이터산업진흥원"},
      skills:["Python","R","MongoDB","MySQL","Data Analysis"],
-     desc:{en:"Completed intensive 360-hour training covering foundational data analysis and programming languages (Python, R, SQL) to build a strong foundation in data science.",
-           kr:"Python, R, MongoDB, MySQL 등 프로그래밍 언어와 기초 데이터 분석 기술을 360시간 동안 집중 이수하며 데이터 사이언스 역량의 기반을 다졌습니다."}},
-    {period:"2021.07.01 - 2021.08.31", hours:60,
-     title:{en:"VR/AR Content Creator Course",kr:"VR/AR 콘텐츠 제작자 과정"},
-     org:{en:"Hallym University",kr:"한림대학교"},
+     desc:{en:"Completed intensive 360-hour training covering foundational data analysis and programming (Python, R, MongoDB, MySQL). Collaborated with an industry partner on a real-world CNC manufacturing project: identified that 70% of machining defects were tool-related. Demonstrated a ~7.5% Recall improvement by applying feature selection on alternative CNC machine data, showing clear potential for smart factory integration.",
+           kr:"Python, R, MongoDB, MySQL 등 프로그래밍 언어와 기초 데이터 분석 기술을 집중 이수(360시간). 실제 기업 연계 프로젝트로 CNC 공정 불량 분석 수행 — 가공 불량 원인의 70%가 Tool 관련임을 확인. 스마트 팩토리 1단계 환경의 한계로 즉각 적용은 불가했으나, 타 기기 데이터에 변수 선택 기법 적용 시 Raw Data 대비 Recall 약 7.5% 향상을 달성."}},
+    {period:"2021.07.01 – 2021.08.31", hours:60,
+     title:{en:"VR/AR Content Creator Course", kr:"VR/AR 콘텐츠 제작자 과정"},
+     org:{en:"Hallym University", kr:"한림대학교"},
      skills:["Unity","C#","VR/AR"],
      desc:{en:"60-hour course on VR/AR content development using the Unity engine, including hands-on app development projects.",
            kr:"Unity 엔진을 활용한 VR/AR 콘텐츠 제작 실습 60시간 이수. 직접 앱을 개발하는 프로젝트 중심으로 진행."}},
-    {period:"2021.01.01 - 2021.01.31", hours:30,
-     title:{en:"Mobile App Development with Android Studio",kr:"안드로이드 스튜디오를 활용하여 모바일 앱 제작하기"},
-     org:{en:"Hallym University LINK+ Business Group",kr:"한림대학교 LINK+사업단"},
+    {period:"2021.01.01 – 2021.01.31", hours:30,
+     title:{en:"Mobile App Development with Android Studio", kr:"안드로이드 스튜디오를 활용하여 모바일 앱 제작하기"},
+     org:{en:"Hallym University LINK+ Business Group", kr:"한림대학교 LINK+사업단"},
      skills:["Android Studio","Java","Mobile UI"],
      desc:{en:"30-hour course on Android app development using Android Studio. Built a personal calendar app as the final project.",
            kr:"안드로이드 스튜디오를 활용한 모바일 앱 개발 30시간 이수. 최종 프로젝트로 나만의 캘린더 어플리케이션을 직접 제작."}}
   ],
   publications:[
-    {year:"2025",type:"Journal Article",
+    {year:"2025", type:"Journal Article",
      title:"Comparative analysis of RGB and infrared imaging photoplethysmography using traditional and deep learning approaches across various frame rates",
      authors:"Sunghan Lee, Jeonghwan Koh, Suyeon Yun, Jinwon Kim, Seoyeong Lee, Goeun Park, Ung Park, Seokjue Jeong, In cheol Jeong",
-     journal:"Digital Health Research, vol. 3, no. 1",doi:"https://doi.org/10.61499/dhr.2025.3.e1"},
-    {year:"2025",type:"Journal Article (SCIE)",
+     journal:"Digital Health Research, vol. 3, no. 1", doi:"https://doi.org/10.61499/dhr.2025.3.e1"},
+    {year:"2025", type:"Journal Article (SCIE)",
      title:"Patch-type wearable electrocardiography and impedance pneumography for sleep staging: A multi-modal deep learning approach",
      authors:"Sunghan Lee, Ung Park, Suyeon Yun, Goeun Park, Sung Pil Cho, Kyung Min Kim, In cheol Jeong",
-     journal:"Computers in Biology and Medicine, vol. 195",doi:"https://doi.org/10.1016/j.compbiomed.2025.110452"},
-    {year:"2025",type:"Conference Proceedings",
+     journal:"Computers in Biology and Medicine, vol. 195", doi:"https://doi.org/10.1016/j.compbiomed.2025.110452"},
+    {year:"2025", type:"Conference Proceedings",
      title:"AI-Enabled Speech Monitoring for Dysarthria Detection in Consumer Electronics",
      authors:"Seoyeong Lee, Sunghan Lee, Goeun Park, Dong-Ok Won, Chul-Ho Kim, Jae-Jun Lee, In cheol Jeong",
-     journal:"2025 IEEE International Conference on Consumer Electronics (ICCE)",doi:"https://doi.org/10.1109/ICCE63647.2025.10929844"}
+     journal:"2025 IEEE International Conference on Consumer Electronics (ICCE)", doi:"https://doi.org/10.1109/ICCE63647.2025.10929844"}
   ],
   patents:[
-    {date:"2025.11",title:{en:"Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data",kr:"보행 데이터 기반 만성 신장 질환 검출 장치 및 방법"},authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee, J. Koh",kr:"발명자: 정인철, 박고은, 이성한, 고정환"},detail:"PCT/KR2025/019785 (International Patent Application, PCT)"},
-    {date:"2025.10",title:{en:"Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data",kr:"보행 데이터 기반 만성 신장 질환 검출 장치 및 방법"},authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee, J. Koh",kr:"발명자: 정인철, 박고은, 이성한, 고정환"},detail:"App. No: 10-2025-0147970 (South Korea)"},
-    {date:"2025.10",title:{en:"Walking Data-Based Biomarker For Detecting Kidney Disease, Extraction Apparatus And Method Thereof",kr:"신장 질환 검출을 위한 보행 데이터 기반 바이오마커, 이의 추출 장치 및 방법"},authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee",kr:"발명자: 정인철, 박고은, 이성한"},detail:"App. No: 10-2025-0147971 (South Korea)"},
-    {date:"2025.09",title:{en:"Apparatus And Method For Classifying Sleep Stages Based On Electrocardiogram And Impedance Plethysmography",kr:"심전도 및 호흡 임피던스 기반 수면 단계 분류 장치 및 방법"},authors:{en:"Inventors: I. C. Jeong, U. Park, S. Lee, G. Park, S. Yun",kr:"발명자: 정인철, 박웅, 이성한, 박고은, 윤수연"},detail:"App. No: 10-2025-0132934 (South Korea)"},
-    {date:"2025.06",title:{en:"Apparatus And Method For Disease Classification Based On Voice Data",kr:"음성 데이터 기반 질환 분류 장치 및 방법"},authors:{en:"Inventors: I. C. Jeong, S. Lee, S. Lee, J. Koh, G. Park",kr:"발명자: 정인철, 이서영, 이성한, 고정환, 박고은"},detail:"App. No: 10-2025-0085420 (South Korea)"}
+    {date:"2025.11", title:{en:"Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", kr:"보행 데이터 기반 만성 신장 질환 검출 장치 및 방법"},
+     authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee, J. Koh", kr:"발명자: 정인철, 박고은, 이성한, 고정환"}, detail:"PCT/KR2025/019785 (International Patent Application, PCT)"},
+    {date:"2025.10", title:{en:"Apparatus And Method For Detecting Chronic Kidney Disease Based On Walking Data", kr:"보행 데이터 기반 만성 신장 질환 검출 장치 및 방법"},
+     authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee, J. Koh", kr:"발명자: 정인철, 박고은, 이성한, 고정환"}, detail:"App. No: 10-2025-0147970 (South Korea)"},
+    {date:"2025.10", title:{en:"Walking Data-Based Biomarker For Detecting Kidney Disease, Extraction Apparatus And Method Thereof", kr:"신장 질환 검출을 위한 보행 데이터 기반 바이오마커, 이의 추출 장치 및 방법"},
+     authors:{en:"Inventors: I. C. Jeong, G. Park, S. Lee", kr:"발명자: 정인철, 박고은, 이성한"}, detail:"App. No: 10-2025-0147971 (South Korea)"},
+    {date:"2025.09", title:{en:"Apparatus And Method For Classifying Sleep Stages Based On Electrocardiogram And Impedance Plethysmography", kr:"심전도 및 호흡 임피던스 기반 수면 단계 분류 장치 및 방법"},
+     authors:{en:"Inventors: I. C. Jeong, U. Park, S. Lee, G. Park, S. Yun", kr:"발명자: 정인철, 박웅, 이성한, 박고은, 윤수연"}, detail:"App. No: 10-2025-0132934 (South Korea)"},
+    {date:"2025.06", title:{en:"Apparatus And Method For Disease Classification Based On Voice Data", kr:"음성 데이터 기반 질환 분류 장치 및 방법"},
+     authors:{en:"Inventors: I. C. Jeong, S. Lee, S. Lee, J. Koh, G. Park", kr:"발명자: 정인철, 이서영, 이성한, 고정환, 박고은"}, detail:"App. No: 10-2025-0085420 (South Korea)"}
   ],
   copyrights:[
-    {date:"2025.09",title:{en:"Web Application for CKD Classification Based on Gait Data",kr:"보행 데이터 기반 만성 신부전증 탐지 웹 어플리케이션"},authors:{en:"Authors: I. C. Jeong, S. Lee, G. Park, J. Koh, S. Ryu",kr:"저자: 정인철, 이성한, 박고은, 고정환, 류선"},detail:"Reg No: C-2025-038377 (South Korea)"},
-    {date:"2025.08",title:{en:"Sleep Tracker v1",kr:"Sleep Tracker v1"},authors:{en:"Authors: I. C. Jeong, S. Lee, W. Park, G. Park",kr:"저자: 정인철, 이성한, 박웅, 박고은"},detail:"Reg No: C-2025-030887 (South Korea)"}
+    {date:"2025.09", title:{en:"Web Application for CKD Classification Based on Gait Data", kr:"보행 데이터 기반 만성 신부전증 탐지 웹 어플리케이션"},
+     authors:{en:"Authors: I. C. Jeong, S. Lee, G. Park, J. Koh, S. Ryu", kr:"저자: 정인철, 이성한, 박고은, 고정환, 류선"}, detail:"Reg No: C-2025-038377 (South Korea)"},
+    {date:"2025.08", title:{en:"Sleep Tracker v1", kr:"Sleep Tracker v1"},
+     authors:{en:"Authors: I. C. Jeong, S. Lee, W. Park, G. Park", kr:"저자: 정인철, 이성한, 박웅, 박고은"}, detail:"Reg No: C-2025-030887 (South Korea)"}
   ],
   awards:[
-    {year:"2022",title:{en:"Grand Prize, Hallym SW Week",kr:"대상, 한림 SW Week"},org:{en:"Hallym University",kr:"한림대학교"}},
-    {year:"2022",title:{en:"Participation Award, Field Problem Solving AI-Big Data Expert Program",kr:"장려상, 현장 문제해결 AI·빅데이터 전문가 과정"},org:{en:"Gyeonggi University Big Data Center",kr:"경기대학교 빅데이터센터"}},
-    {year:"2021",title:{en:"Grand Prize, Hallym/OP.GG Game Big Data Hackathon",kr:"최우수상, Hallym/OP.GG Game Big Data Hackathon"},org:{en:"Hallym University",kr:"한림대학교"}},
-    {year:"2021",title:{en:"Excellence Award, Hallym/OP.GG Game Big Data Hackathon",kr:"우수상, Hallym/OP.GG Game Big Data Hackathon"},org:{en:"OP.GG",kr:"OP.GG"}}
+    {year:"2022", title:{en:"Grand Prize, Hallym SW Week", kr:"대상, 한림 SW Week"}, org:{en:"Hallym University", kr:"한림대학교"}},
+    {year:"2022", title:{en:"Participation Award, Field Problem Solving AI-Big Data Expert Program", kr:"장려상, 현장 문제해결 AI·빅데이터 전문가 과정"}, org:{en:"Gyeonggi University Big Data Center", kr:"경기대학교 빅데이터센터"}},
+    {year:"2021", title:{en:"Grand Prize, Hallym/OP.GG Game Big Data Hackathon", kr:"최우수상, Hallym/OP.GG Game Big Data Hackathon"}, org:{en:"Hallym University", kr:"한림대학교"}},
+    {year:"2021", title:{en:"Excellence Award, Hallym/OP.GG Game Big Data Hackathon", kr:"우수상, Hallym/OP.GG Game Big Data Hackathon"}, org:{en:"OP.GG", kr:"OP.GG"}}
   ],
   activities:[
-    {period:"2022.01 - 2022.12",role:{en:"Vice President",kr:"부학생회장"},org:{en:"Student Council of the College, Hallym University",kr:"한림대학교 데이터사이언스 학생회"}},
-    {period:"2021.01 - 2021.12",role:{en:"Director, Communication & PR Department",kr:"소통홍보국장"},org:{en:"Dormitory Council, Hallym University",kr:"한림대학교 사생위원단"}},
-    {period:"2020.03 - 2020.12",role:{en:"Staff Member",kr:"학생회 부원"},org:{en:"Department Student Council, Hallym University",kr:"한림대학교 데이터사이언스 학생회"}}
+    {period:"2022.01 – 2022.12", role:{en:"Vice President", kr:"부학생회장"}, org:{en:"Student Council of the College, Hallym University", kr:"한림대학교 데이터사이언스 학생회"}},
+    {period:"2021.01 – 2021.12", role:{en:"Director, Communication & PR Department", kr:"소통홍보국장"}, org:{en:"Dormitory Council, Hallym University", kr:"한림대학교 사생위원단"}},
+    {period:"2020.03 – 2020.12", role:{en:"Staff Member", kr:"학생회 부원"}, org:{en:"Department Student Council, Hallym University", kr:"한림대학교 데이터사이언스 학생회"}}
   ],
   skills:{
-    en:["Programming: Python (PyTorch, TensorFlow, Scikit-learn), R (Tidyverse), SAS (Certified), Java, C, LaTeX","Research: Deep learning-based biological signal processing, Clinical data preprocessing","Tools: Docker, Notion, SPSS"],
-    kr:["프로그래밍: Python (PyTorch, TensorFlow, Scikit-learn), R (Tidyverse), SAS (Base Programming 자격), Java, C, LaTeX","연구 분야: 딥러닝 기반 생체 신호 처리 및 질환 분류, 임상 데이터 전처리 및 결측치 보정","도구: Docker, Notion, SPSS"]
+    en:[
+      "Programming: Python (PyTorch, TensorFlow, Scikit-learn, pycaret), R (Tidyverse), SAS (Certified), SQL (MySQL, MongoDB), Java, C, LaTeX",
+      "Deep Learning: CNN, 1-D CNN, Encoder-Decoder (AE), Signal classification, Feature selection (mRMR, XGBoost), Time-series analysis",
+      "Research: Biosignal processing (IMU, PPG, ECG, rPPG), Clinical data preprocessing, Missing data imputation (MICE), Statistical analysis, Genomics",
+      "Web / App: React, Firebase, Figma, Android Studio (Java), Unity (C#), Responsive web design",
+      "Tools & Infra: Docker, Remote server (Linux), Git, Notion, SPSS, AI-HUB secure environment"
+    ],
+    kr:[
+      "프로그래밍: Python (PyTorch, TensorFlow, Scikit-learn, pycaret), R (Tidyverse), SAS (Base Programming 자격), SQL (MySQL, MongoDB), Java, C, LaTeX",
+      "딥러닝·ML: CNN, 1-D CNN, 인코더-디코더(AE), 신호 분류, 변수 선택 (mRMR, XGBoost), 시계열 분석",
+      "연구 분야: 생체신호 처리 (IMU, PPG, ECG, rPPG), 임상 데이터 전처리, 결측치 보정 (MICE), 통계분석, 유전체 분석",
+      "웹·앱 개발: React, Firebase, Figma, Android Studio (Java), Unity (C#), 반응형 웹 디자인",
+      "도구·인프라: Docker, 원격 서버 (Linux), Git, Notion, SPSS, AI-HUB 보안 환경"
+    ]
   },
   projects:[
-      {
-      kicker:{en:"Industry Project · 2022.07 – 2022.08",kr:"기업 연계 프로젝트 · 2022.07 – 2022.08"},
-      name:{en:"CNC Machining Defect Analysis",kr:"CNC 공정 불량 원인 분석 및 예측"},
-      meta:{en:"2022 Data Youth Campus",kr:"2022 데이터 청년캠퍼스 실무 연계"},
-      badges:[{label:{en:"Industry Collaboration",kr:"기업 연계"},cls:"badge-blue"}],
+    {
+      kicker:{en:"Industry Project · 2022.07 – 2022.08", kr:"기업 연계 프로젝트 · 2022.07 – 2022.08"},
+      name:{en:"CNC Machining Defect Analysis", kr:"CNC 공정 불량 원인 분석 및 예측"},
+      meta:{en:"2022 Data Youth Campus", kr:"2022 데이터 청년캠퍼스 실무 연계"},
+      badges:[{label:{en:"Industry Collaboration", kr:"기업 연계"}, cls:"badge-blue"}],
       summary:{
-        en:"Collaborated with an industry partner on a real-world CNC manufacturing project to identify the causes of machining defects. Analyzed factory data and found that 70% of defects were tool-related. Although immediate application was limited by the factory's tier-1 smart environment, I demonstrated a ~7.5% Recall improvement by applying feature selection on alternative CNC machine data, proving the potential for future smart factory integration.",
-        kr:"실제 기업의 데이터를 활용해 CNC 공정 불량 원인을 분석하는 실무 프로젝트를 수행했습니다. 데이터 분석 결과 가공 불량 원인의 70%가 Tool과 관련되어 있음을 규명했습니다. 해당 공정이 스마트 팩토리 1단계 수준이라 즉각적인 모델 적용은 어려웠으나, 타 기기 데이터에 변수 선택(Feature Selection) 기법을 적용해 Raw Data 대비 Recall을 약 7.5% 향상시키며 향후 고도화된 스마트 팩토리 환경에서의 적용 가능성을 훌륭하게 입증했습니다."
+        en:"Collaborated with an industry partner on a real-world CNC manufacturing project to identify the causes of machining defects. Analyzed factory data and found that <strong>70% of defects were tool-related</strong>. Although immediate application was limited by the factory's tier-1 smart environment, demonstrated a <strong>~7.5% Recall improvement</strong> by applying feature selection on alternative CNC machine data, proving the potential for future smart factory integration.",
+        kr:"실제 기업의 데이터를 활용해 CNC 공정 불량 원인을 분석하는 실무 프로젝트를 수행했습니다. 데이터 분석 결과 <strong>가공 불량 원인의 70%가 Tool 관련</strong>임을 규명했습니다. 해당 공정이 스마트 팩토리 1단계 수준이라 즉각적인 모델 적용은 어려웠으나, 타 기기 데이터에 변수 선택 기법을 적용해 Raw Data 대비 <strong>Recall 약 7.5% 향상</strong>을 달성했습니다."
       },
       tags:["Python","R","Data Analysis","Feature Selection","Smart Factory"]
     },
-      {
-      // ⭐ 추가됨: 2024 웹개발 프로젝트
-      kicker:{en:"Team Project · 2024.08 – 2024.12",kr:"팀 프로젝트 · 2024.08 – 2024.12"},
-      name:{en:"AI-Powered Home Workout Assistant Web App",kr:"웹캠 동작 인식 기반 홈트레이닝 보조 웹 서비스"},
-      meta:{en:"Frontend Developer & UI/UX Designer",kr:"프론트엔드 개발 및 UI/UX 디자인"},
-      badges:[{label:{en:"Web Application",kr:"웹 서비스 개발"},cls:"badge-blue"}],
+    {
+      kicker:{en:"Team Project · 2023.08 – 2023.12", kr:"팀 프로젝트 · 2023.08 – 2023.12"},
+      name:{en:"AI-Powered Home Workout Assistant Web App", kr:"웹캠 동작 인식 기반 홈트레이닝 보조 웹 서비스"},
+      meta:{en:"Frontend Developer & UI/UX Designer", kr:"프론트엔드 개발 및 UI/UX 디자인"},
+      badges:[{label:{en:"Web Application", kr:"웹 서비스 개발"}, cls:"badge-blue"}],
       summary:{
-        en:"Developed a web application that tracks user movements via a laptop webcam to assist with home workouts. Led the UI/UX design using Figma and implemented a fully responsive frontend using React. Handled backend integration via Firebase, managing real-time user authentication (sign-up/login) and database syncing for workout records, showcasing full-stack capabilities.",
-        kr:"노트북 웹캠으로 사용자의 동작을 인식하여 운동을 보조하는 웹 애플리케이션을 개발했습니다. 피그마(Figma)를 활용해 UI/UX를 기획하고 React로 반응형 웹을 완벽하게 구현했습니다. 또한 Firebase를 연동하여 실시간 사용자 인증(회원가입/로그인) 및 운동 기록 데이터베이스를 구축하는 등 프론트엔드와 백엔드 연결 전반을 담당하며 웹 서비스 구축 역량을 증명했습니다."
+        en:"Developed a web application that tracks user movements via a laptop webcam to assist with home workouts. <strong>Led the UI/UX design using Figma</strong> and implemented a fully responsive frontend using React. Handled backend integration via Firebase, managing real-time user authentication (sign-up/login) and database syncing for workout records.",
+        kr:"노트북 웹캠으로 사용자의 동작을 인식하여 운동을 보조하는 웹 애플리케이션을 개발했습니다. <strong>Figma를 활용해 UI/UX를 기획</strong>하고 React로 반응형 웹을 구현했습니다. Firebase를 연동하여 실시간 사용자 인증(회원가입/로그인) 및 운동 기록 데이터베이스를 구축했습니다."
       },
       tags:["React","Firebase","Figma","UI/UX","Responsive Web","Frontend"]
     },
     {
-      kicker:{en:"Hackathon · 2021.10 · 4 weeks",kr:"해커톤 · 2021.10 · 4주"},
-      name:{en:"OP.GG Game Big Data Hackathon",kr:"OP.GG 게임 빅데이터 해커톤"},
-      meta:{en:"Team Leader · Hallym University × OP.GG",kr:"팀장 · 한림대학교 × OP.GG"},
-      badges:[{label:{en:"Grand Prize",kr:"최우수상"},cls:"badge-gold"},{label:{en:"Excellence Award · OP.GG",kr:"우수상 · OP.GG"},cls:"badge-blue"}],
+      kicker:{en:"Hackathon · 2021.01 · 4 weeks (Award: 2021.02)", kr:"해커톤 · 2021.01 · 4주 (수상: 2021.02)"},
+      name:{en:"OP.GG Game Big Data Hackathon", kr:"OP.GG 게임 빅데이터 해커톤"},
+      meta:{en:"Team Leader · Hallym University × OP.GG", kr:"팀장 · 한림대학교 × OP.GG"},
+      badges:[{label:{en:"Grand Prize", kr:"최우수상"}, cls:"badge-gold"},{label:{en:"Excellence Award · OP.GG", kr:"우수상 · OP.GG"}, cls:"badge-blue"}],
       summary:{
-        en:"My first meaningful coding experience as a team leader. Built a champion duo win-rate recommendation system for League of Legends bot lane — a feature not yet offered on OP.GG at the time. Starting from near-zero experience (basic Python + R), the 4-week sprint grew my skills tenfold. Collected 10GB+ of text data from Brazil's high-tier server via the Riot API, handling deduplication of game IDs (to avoid counting the same match twice), rate-limit retries, and cross-language data pipelines. The feature was later launched by OP.GG.",
-        kr:"팀장으로 처음으로 코딩에 의미를 느낀 경험. 당시 OP.GG에서 제공하지 않던 리그 오브 레전드 바텀 챔피언 조합별 승률 추천 시스템을 제안하고 개발했습니다. Python 기초와 R만 알던 상태에서 4주 만에 실력이 10배 성장했습니다. Riot API를 활용해 국내 서버 크롤링 오류 문제를 우회하여 브라질 상위 티어 서버 데이터를 수집(텍스트 10GB+). 게임 ID 중복 제거, 분당 수집 제한 재시도 처리, Python-R 혼합 파이프라인을 구축했습니다. 이후 OP.GG에서 동일 서비스 출시 확인."
+        en:"My first meaningful coding experience as a team leader. Built a <strong>champion duo win-rate recommendation system</strong> for League of Legends bot lane — a feature not yet offered on OP.GG at the time. Starting from near-zero experience, the 4-week sprint grew my skills tenfold. Collected <strong>10GB+ of text data</strong> from Brazil's high-tier server via the Riot API, handling deduplication of game IDs, rate-limit retries, and cross-language data pipelines. The feature was later launched by OP.GG.",
+        kr:"팀장으로 처음으로 코딩에 의미를 느낀 경험. 당시 OP.GG에서 제공하지 않던 <strong>바텀 챔피언 조합별 승률 추천 시스템</strong>을 제안하고 개발했습니다. Python 기초만 알던 상태에서 4주 만에 실력이 10배 성장했습니다. Riot API로 국내 서버 오류를 우회해 브라질 서버 데이터 <strong>텍스트 10GB+</strong>를 수집. 게임 ID 중복 제거, 분당 수집 제한 재시도 처리를 구현했습니다. 이후 OP.GG에서 동일 서비스 출시 확인."
       },
       tags:["Python","R","Riot API","REST API","Data Deduplication","Statistical Analysis"]
     },
     {
-      kicker:{en:"Competition · 2021.11",kr:"공모전 · 2021.11"},
-      name:{en:"Sejong Housing Market Analysis",kr:"세종시 주택시장 분석 공모전"},
-      meta:{en:"Individual · Participant-only dataset",kr:"팀 참가 · 참가자 공개 데이터"},
-      badges:[{label:{en:"Participant",kr:"참가"},cls:"badge-gray"}],
+      kicker:{en:"Competition · 2021.11", kr:"공모전 · 2021.11"},
+      name:{en:"Sejong Housing Market Analysis", kr:"세종시 주택시장 분석 공모전"},
+      meta:{en:"Team · Participant-only dataset", kr:"팀 참가 · 참가자 공개 데이터"},
+      badges:[{label:{en:"Participant", kr:"참가"}, cls:"badge-gray"}],
       summary:{
-        en:"Analyzed Sejong City's housing market using a participant-exclusive open dataset. Combined residential price data with nearby business density (restaurants, hospitals, etc.) to explore spatial correlates of housing value by district. A valuable experience in spatial data integration and multi-source analysis, even without placing.",
-        kr:"참가자에게만 공개된 데이터를 활용해 세종시 지역별 주택 가격과 주변 업종(음식점, 병원 등) 분포의 상관관계를 분석했습니다. 수상은 하지 못했지만, 공간 데이터와 가격 데이터를 결합하는 다중 출처 분석 경험을 쌓을 수 있었습니다."
+        en:"Analyzed Sejong City's housing market using a participant-exclusive open dataset. Combined residential price data with nearby business density (restaurants, hospitals, etc.) to explore spatial correlates of housing value by district. A valuable experience in spatial data integration and multi-source analysis.",
+        kr:"참가자에게만 공개된 데이터를 활용해 세종시 지역별 주택 가격과 주변 업종(음식점, 병원 등) 분포의 상관관계를 분석했습니다. 공간 데이터와 가격 데이터를 결합하는 다중 출처 분석 경험을 쌓을 수 있었습니다."
       },
       tags:["R","Spatial Analysis","Public Data","EDA","Visualization"]
     },
     {
-      kicker:{en:"Research · 2024.04 – Present",kr:"연구 · 2024.04 – 현재"},
-      name:{en:"Hallym University RLRC Research Center",kr:"한림대학교 RLRC 연구센터"},
-      meta:{en:"Research Assistant",kr:"연구원"},
-      badges:[{label:{en:"IEEE JBHI (Under Review)",kr:"IEEE JBHI 투고"},cls:"badge-blue"},{label:{en:"5 Patents Filed",kr:"특허 5건"},cls:"badge-green"}],
+      kicker:{en:"Research · 2024.04 – Present", kr:"연구 · 2024.04 – 현재"},
+      name:{en:"Hallym University RLRC Research Center", kr:"한림대학교 RLRC 연구센터"},
+      meta:{en:"Research Assistant · Cardiovascular Disease Research Center", kr:"연구원 · 심뇌혈관질환융합연구소"},
+      badges:[
+        {label:{en:"JMIR mHealth (Under Review)", kr:"JMIR mHealth 투고"}, cls:"badge-blue"},
+        {label:{en:"3 Papers · 5 Patents · 2 Copyrights", kr:"논문 3편 · 특허 5건 · 저작권 2건"}, cls:"badge-green"}
+      ],
       summary:{
-        en:"Six months of full-time AI research spanning five distinct clinical projects. Gained hands-on experience with Docker, remote server environments, and production-grade deep learning pipelines. Each project ranged from leading roles to supporting contributions.",
-        kr:"5개의 임상 AI 프로젝트를 수행하며 Docker, 원격 서버 환경, 딥러닝 파이프라인을 실전에서 익혔습니다. 주도적으로 이끈 프로젝트부터 보조로 참여한 과제까지 다양한 역할을 맡았습니다."
+        en:"Over a year of full-time AI research spanning <strong>six distinct clinical projects</strong>. Gained hands-on experience with Docker, remote server environments, and production-grade deep learning pipelines. Each project ranged from leading roles to supporting contributions.",
+        kr:"<strong>6개의 임상 AI 프로젝트</strong>를 수행하며 Docker, 원격 서버 환경, 딥러닝 파이프라인을 실전에서 익혔습니다. 주도적으로 이끈 프로젝트부터 보조로 참여한 과제까지 다양한 역할을 맡았습니다."
       },
-      tags:["Python","PyTorch","TensorFlow","1-D CNN","Docker","mRMR","XGBoost","pycaret","Signal Processing"],
+      tags:["Python","PyTorch","TensorFlow","CNN","Docker","mRMR","XGBoost","pycaret","Signal Processing"],
       subs:[
         {
           num:"①",
-          title:{en:"Dysarthria Detection from Speech",kr:"구음장애 음성 분류"},
-          desc:{en:"Built a deep learning classifier distinguishing dysarthric patients from healthy speakers using AI-HUB speech data and self-collected recordings. Deployed in a secure remote server environment (AI-HUB) via Docker. Achieved 5-fold accuracy of 96.01 ± 5.02% on a single-command task — demonstrating clinical feasibility.",kr:"AI-HUB 음성 데이터와 자체 수집 일반인 데이터를 활용해 구음장애 환자 분류 딥러닝 모델 개발. Docker 기반 원격 서버 환경(AI-HUB) 첫 경험. 단일 명령어 기준 5-fold 정확도 96.01 ± 5.02% 달성."},
-          result:{label:{en:"Acc 96.01% (5-fold)",kr:"5-fold 정확도 96.01%"},cls:"green"},
-          tags:["Python","Deep Learning","Docker","AI-HUB"]
+          title:{en:"Dysarthria Detection from Speech", kr:"구음장애 음성 분류"},
+          desc:{en:"Built a deep learning classifier distinguishing dysarthric patients from healthy speakers using AI-HUB speech data and self-collected recordings. Deployed in a <strong>secure remote server environment (AI-HUB) via Docker</strong>. Achieved <strong>5-fold accuracy of 96.01 ± 5.02%</strong> on a single-command task. Results published at IEEE ICCE 2025 and a related patent filed.",
+                kr:"AI-HUB 음성 데이터와 자체 수집 일반인 데이터를 활용해 구음장애 환자 분류 딥러닝 모델 개발. <strong>Docker 기반 원격 서버 환경(AI-HUB)</strong> 첫 경험. 단일 명령어 기준 <strong>5-fold 정확도 96.01 ± 5.02% 달성</strong>. IEEE ICCE 2025 게재 및 관련 특허 출원."},
+          result:{label:{en:"Acc 96.01% · IEEE ICCE 2025 · Patent", kr:"정확도 96.01% · IEEE ICCE 2025 · 특허"}, cls:"green"},
+          tags:["Python","Deep Learning","Docker","AI-HUB","Speech Processing"]
         },
         {
           num:"②",
-          title:{en:"Sleep Stage Classification",kr:"수면 단계 분류"},
-          desc:{en:"Supporting role in variable selection and statistical analysis for a multimodal biosignal-based sleep staging model. Used pycaret for automated feature evaluation and correlation analysis.",kr:"다중 생체 신호 기반 수면 단계 분류 모델의 변수 선택 및 통계분석 보조. pycaret 활용으로 자동화된 변수 평가 경험."},
-          tags:["pycaret","Statistical Analysis","Multimodal Signals"]
+          title:{en:"Sleep Stage Classification", kr:"수면 단계 분류"},
+          desc:{en:"Supporting role in variable selection and statistical analysis for a <strong>multimodal biosignal-based sleep staging model</strong> using patch-type wearable ECG and impedance pneumography. Used pycaret for automated feature evaluation. Published in <em>Computers in Biology and Medicine</em> (SCIE), with a related patent and software copyright registered.",
+                kr:"패치형 웨어러블 심전도(ECG) 및 임피던스 호흡 신호 기반 <strong>다중 생체신호 수면 단계 분류</strong> 모델의 변수 선택 및 통계분석 보조. pycaret 활용. <em>Computers in Biology and Medicine</em> (SCIE) 게재, 관련 특허 및 소프트웨어 저작권 등록."},
+          result:{label:{en:"SCIE Published · Patent · S/W Copyright", kr:"SCIE 게재 · 특허 · 저작권"}, cls:"blue"},
+          tags:["pycaret","Statistical Analysis","ECG","Multimodal Signals"]
         },
         {
           num:"③",
-          title:{en:"Moyamoya Disease Genomics",kr:"모야모야병 유전체 분석"},
-          desc:{en:"Searched for novel protein biomarkers in Moyamoya disease patients beyond clinically established ones. Applied mRMR feature selection to screen 258 variables, boosting AUC from 85% to 97% — a 12-point improvement that underscores the value of data-driven feature discovery over clinical convention.",kr:"기존에 알려진 단백질 외 새로운 바이오마커 탐색. mRMR 기법으로 258개 변수 선택 → AUC 85%에서 97%로 12%p 향상. 컴퓨팅 성능 향상에 따른 대규모 변수 적용 가능성을 입증."},
-          result:{label:{en:"AUC 85% → 97% (+12pp)",kr:"AUC 85% → 97% (+12%p)"},cls:"blue"},
-          tags:["mRMR","Python","Feature Selection","Genomics"]
+          title:{en:"Moyamoya Disease Genomics", kr:"모야모야병 유전체 분석"},
+          desc:{en:"Searched for novel protein biomarkers in Moyamoya disease beyond clinically established ones. Applied <strong>mRMR feature selection</strong> to screen 258 variables, <strong>boosting AUC from 85% to 97% — a 12-point improvement</strong>.",
+                kr:"기존에 알려진 단백질 외 새로운 바이오마커 탐색. <strong>mRMR 기법</strong>으로 258개 변수 선택 → <strong>AUC 85%에서 97%로 12%p 향상</strong>. 컴퓨팅 성능 향상에 따른 대규모 변수 적용 가능성 입증."},
+          result:{label:{en:"AUC 85% → 97% (+12pp)", kr:"AUC 85% → 97% (+12%p)"}, cls:"blue"},
+          tags:["mRMR","Python","Feature Selection","Genomics","Proteomics"]
         },
         {
           num:"④",
-          title:{en:"Brain Aneurysm Genomics",kr:"뇌동맥류 유전체 분석"},
-          desc:{en:"Applied XGBoost weight-based feature selection on aneurysm patient genomic data. With weight ≥ 2 threshold, LR 10-fold accuracy reached 0.9309. Narrowing to weight ≥ 3 dropped accuracy to 0.8417 — revealing that moderate-weight features contribute meaningfully to fine-grained classification.",kr:"XGBoost weight 기반 변수 선택 적용. weight ≥ 2 기준 LR 10-fold 정확도 0.9309. weight ≥ 3으로 좁힐 시 0.8417로 감소 → 중간 weight 변수가 세밀한 분류에 기여함을 확인."},
-          result:{label:{en:"10-fold Acc 0.9309",kr:"10-fold 정확도 0.9309"},cls:"blue"},
+          title:{en:"Brain Aneurysm Genomics", kr:"뇌동맥류 유전체 분석"},
+          desc:{en:"Applied <strong>XGBoost weight-based feature selection</strong> on aneurysm patient genomic data. With weight ≥ 2 threshold, LR 10-fold accuracy reached <strong>0.9309</strong>. Narrowing to weight ≥ 3 dropped to 0.8417 — revealing that moderate-weight features contribute meaningfully to fine-grained classification.",
+                kr:"<strong>XGBoost weight 기반 변수 선택</strong> 적용. weight ≥ 2 기준 LR 10-fold 정확도 <strong>0.9309</strong>. weight ≥ 3으로 좁힐 시 0.8417로 감소 → 중간 weight 변수가 세밀한 분류에 기여함을 확인."},
+          result:{label:{en:"10-fold Acc 0.9309", kr:"10-fold 정확도 0.9309"}, cls:"blue"},
           tags:["XGBoost","Logistic Regression","Feature Selection","Genomics"]
         },
         {
           num:"⑤",
-          title:{en:"CKD Gait Analysis (Lead Project)",kr:"CKD 보행 분석 (주 프로젝트)"},
-          desc:{en:"Lead project. Developed a 1-D CNN pipeline to classify CKD patients vs. healthy controls from waist/wrist IMU gait signals. Compared windowing and resampling segmentation strategies across two walking tasks. Best result: resampling + waist + ST walk, Accuracy 0.805, AUROC 0.870. Under review at IEEE Journal of Biomedical and Health Informatics.",kr:"주도 프로젝트. 허리·손목 부착 IMU 보행 신호에서 1-D CNN으로 CKD 환자와 정상인을 분류. 윈도잉·리샘플링 분할 전략 비교, 두 가지 보행 과제 실험. 최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.805, AUROC 0.870. IEEE JBHI 투고 중."},
-          result:{label:{en:"AUROC 0.870 · IEEE JBHI",kr:"AUROC 0.870 · IEEE JBHI 투고"},cls:"blue"},
-          tags:["1-D CNN","IMU","Signal Processing","PyTorch","Docker"]
+          title:{en:"CKD Gait Analysis (Lead Project)", kr:"CKD 보행 분석 (주 프로젝트)"},
+          desc:{en:"Lead project. Developed a <strong>CNN-based pipeline to classify CKD patients vs. healthy controls</strong> from waist/wrist IMU gait signals. Compared windowing and resampling segmentation strategies across two walking tasks. <strong>Best result: resampling + waist + ST walk — Accuracy 0.850, AUROC 0.893</strong>. Under review at JMIR mHealth and uHealth. 2 domestic + 1 PCT international patents filed.",
+                kr:"주도 프로젝트. 허리·손목 부착 IMU 보행 신호에서 <strong>CNN으로 CKD 환자와 정상인을 분류</strong>. 윈도잉·리샘플링 분할 전략 비교, 두 가지 보행 과제 실험. <strong>최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.850, AUROC 0.893</strong>. JMIR mHealth and uHealth 투고 중. 국내 특허 2건 + PCT 국제특허 1건 출원."},
+          result:{label:{en:"AUROC 0.893 · JMIR mHealth (Under Review)", kr:"AUROC 0.893 · JMIR mHealth 투고"}, cls:"blue"},
+          tags:["CNN","IMU","Signal Processing","PyTorch","Docker","Gait Analysis"]
         },
         {
           num:"⑥",
-          title:{en:"rPPG from Facial Video",kr:"안면 영상 기반 rPPG 예측"},
-          desc:{en:"Supporting role. Surveyed literature on remote photoplethysmography (rPPG) for estimating PPG signals from facial video alone. Contributed to experiment design. Extensive paper review made full experimentation difficult within the timeframe.",kr:"보조 참여. 안면 동영상에서 PPG 신호를 예측하는 rPPG 관련 논문 서베이 및 실험 설계 기여. 관련 자료 조사에 시간이 집중되어 본격적인 실험은 미완."},
-          tags:["rPPG","Computer Vision","Literature Review"]
+          title:{en:"rPPG / iPPG from Facial Video", kr:"안면 영상 기반 iPPG 예측"},
+          desc:{en:"Contributed to <strong>data collection and preprocessing</strong> for a study comparing RGB and IR camera-based non-contact physiological signal (iPPG) reconstruction at 30/300 fps. The study used a CNN encoder-decoder model and was published in <em>Digital Health Research</em>.",
+                kr:"RGB·IR 카메라(30/300fps) 기반 비접촉 생체신호(iPPG) 재현 연구에서 <strong>데이터 수집 및 전처리</strong> 작업에 참여. CNN 인코더-디코더 모델 기반 연구로 <em>Digital Health Research</em>에 게재됨."},
+          result:{label:{en:"Digital Health Research (Published)", kr:"Digital Health Research 게재"}, cls:"green"},
+          tags:["rPPG","iPPG","Data Collection","Preprocessing","RGB/IR Camera"]
         }
       ]
     }
   ]
 };
+
 /* ── HELPERS ── */
 let L = 'en';
 const $ = id => document.getElementById(id);
@@ -551,43 +587,41 @@ const t  = obj => (obj||{})[L] || '';
 const hl = s => (s||'').replace(/(Goeun Park|G\.\s*Park|박고은)/gi,'<strong class="highlight">$1</strong>');
 const bc = type => { if(!type) return 'journal'; const s=type.toLowerCase(); return s.includes('scie')?'scie':s.includes('conference')?'conference':'journal'; };
 
-/* 💡 마법의 자동 정렬 기능 (어디서든 알아서 최신순!) 💡 */
-const getSortVal = (item) => {
-  // kicker, period, date, year 중 날짜가 적힌 텍스트를 찾음
-  let s = item.kicker ? item.kicker.en : (item.period || item.date || item.year || '');
-  // 'Present'나 '현재'라는 단어가 있으면 무조건 점수 1등(최상단)
-  if (/present|현재/i.test(s)) return 999999; 
-  // '2024.04' 또는 '2021' 같은 숫자를 찾아내서 점수로 변환 (예: 202404)
-  const match = s.match(/(20\d{2})(?:\.(\d{1,2}))?/); 
-  return match ? parseInt(match[1]) * 100 + (parseInt(match[2]) || 0) : 0;
+/* ── AUTO-SORT by date (newest first) ── */
+const getSortVal = item => {
+  let s = item.kicker ? (item.kicker.en||'') : (item.period||item.date||String(item.year||''));
+  if (/present|현재/i.test(s)) return 999999;
+  const m = s.match(/(20\d{2})(?:[.\-](\d{1,2}))?/);
+  return m ? parseInt(m[1])*100 + (parseInt(m[2])||0) : 0;
 };
-// 모든 배열을 찾아서 렌더링 전에 알아서 최신순으로 줄 세우기
-['education', 'work', 'projects', 'training', 'publications', 'patents', 'copyrights', 'awards', 'activities'].forEach(key => {
-  if (D[key] && Array.isArray(D[key])) D[key].sort((a, b) => getSortVal(b) - getSortVal(a));
-});
+['education','work','projects','training','publications','patents','copyrights','awards','activities']
+  .forEach(k => { if(Array.isArray(D[k])) D[k].sort((a,b) => getSortVal(b)-getSortVal(a)); });
 
 /* ── RENDER ── */
 function render() {
   document.documentElement.setAttribute('lang', L==='kr'?'ko':'en');
 
-  // Profile
-  tx('name',         t(D.info.name));  tx('mobile-name', t(D.info.name));
-  tx('profile-role', t(D.info.role));  tx('mobile-role',  t(D.info.role));
-  hm('about-text',   t(D.info.about));
+  tx('name', t(D.info.name)); tx('mobile-name', t(D.info.name));
+  tx('profile-role', t(D.info.role)); tx('mobile-role', t(D.info.role));
+  hm('about-text', t(D.info.about));
 
-  // Titles
   const titles = {
-    'label-about':{en:'About',kr:'소개'},'title-edu':{en:'Education',kr:'학력'},
+    'label-about':{en:'About',kr:'소개'},
+    'title-skill':{en:'Skills',kr:'보유 기술'},
+    'title-edu':{en:'Education',kr:'학력'},
     'title-work':{en:'Work Experience',kr:'연구 및 업무 경험'},
     'title-proj':{en:'Projects',kr:'프로젝트'},
-    'title-training':{en:'Training & Courses',kr:'교육 이수'},
-    'title-pub':{en:'Publications',kr:'논문 실적'},'title-pat':{en:'Patents',kr:'특허 실적'},
+    'title-pub':{en:'Publications',kr:'논문 실적'},
+    'title-pat':{en:'Patents',kr:'특허 실적'},
     'title-copy':{en:'Software Copyrights',kr:'소프트웨어 저작권'},
-    'title-award':{en:'Awards',kr:'수상 내역'},'title-act':{en:'Student Activities',kr:'학생 자치 활동'},
-    'title-skill':{en:'Skills',kr:'보유 기술'}
+    'title-award':{en:'Awards',kr:'수상 내역'},
+    'title-training':{en:'Training & Courses',kr:'교육 이수'},
+    'title-act':{en:'Student Activities',kr:'학생 자치 활동'}
   };
-  Object.entries(titles).forEach(([id,o])=>tx(id,o[L]));
-  document.querySelectorAll('.nav-link,.mob-nav-link').forEach(a=>{ const v=a.getAttribute('data-'+L); if(v) a.textContent=v; });
+  Object.entries(titles).forEach(([id,o]) => tx(id, o[L]));
+  document.querySelectorAll('.nav-link,.mob-nav-link').forEach(a => {
+    const v = a.getAttribute('data-'+L); if(v) a.textContent = v;
+  });
 
   // Education
   hm('education-list', D.education.map(e=>`
@@ -612,23 +646,23 @@ function render() {
     </div>`).join(''));
 
   // Projects
-  hm('project-list', D.projects.map(p=>{
-    const badgesHtml = (p.badges||[]).map(b=>`<span class="badge ${b.cls}">${t(b.label)}</span>`).join('');
-    const tagsHtml   = (p.tags||[]).map(s=>`<span class="project-tag">${s}</span>`).join('');
-    const subsHtml   = (p.subs||[]).map(s=>{
-      const resultHtml = s.result ? `<div><span class="sub-result ${s.result.cls}">${t(s.result.label)}</span></div>` : '';
-      const subTagsHtml = (s.tags||[]).map(tg=>`<span class="sub-tag">${tg}</span>`).join('');
+  hm('project-list', D.projects.map(p => {
+    const badges = (p.badges||[]).map(b=>`<span class="badge ${b.cls}">${t(b.label)}</span>`).join('');
+    const tags   = (p.tags||[]).map(s=>`<span class="project-tag">${s}</span>`).join('');
+    const subs   = (p.subs||[]).map(s => {
+      const res  = s.result ? `<div><span class="sub-result ${s.result.cls}">${t(s.result.label)}</span></div>` : '';
+      const stags = (s.tags||[]).map(tg=>`<span class="sub-tag">${tg}</span>`).join('');
       return `<div class="sub-project">
         <div class="sub-num">${s.num}</div>
         <div>
           <div class="sub-title">${t(s.title)}</div>
-          ${resultHtml}
+          ${res}
           <div class="sub-desc">${t(s.desc)}</div>
-          <div class="sub-tags">${subTagsHtml}</div>
+          <div class="sub-tags">${stags}</div>
         </div>
       </div>`;
     }).join('');
-    const subBlock = p.subs ? `<div class="project-divider"></div><div class="sub-projects">${subsHtml}</div>` : '';
+    const subBlock = p.subs ? `<div class="project-divider"></div><div class="sub-projects">${subs}</div>` : '';
     return `<div class="project-entry">
       <div class="project-header">
         <div>
@@ -636,32 +670,15 @@ function render() {
           <div class="project-name">${t(p.name)}</div>
           <div class="project-meta">${t(p.meta)}</div>
         </div>
-        <div class="project-badges">${badgesHtml}</div>
+        <div class="project-badges">${badges}</div>
       </div>
       <div class="project-body">
         <div class="project-summary">${t(p.summary)}</div>
-        <div class="project-tags">${tagsHtml}</div>
+        <div class="project-tags">${tags}</div>
       </div>
       ${subBlock}
     </div>`;
   }).join(''));
-
-  // Training
-  hm('training-list', D.training.map(tr=>`
-    <div class="training-item">
-      <div class="training-header">
-        <div>
-          <div class="training-title">${t(tr.title)}</div>
-          <div class="training-org">${t(tr.org)}</div>
-        </div>
-        <div class="training-meta-block">
-          <div class="training-period">${tr.period}</div>
-          <div class="training-hours">${tr.hours}h</div>
-        </div>
-      </div>
-      <div class="training-desc">${t(tr.desc)}</div>
-      <div class="training-tags">${(tr.skills||[]).map(s=>`<span class="training-tag">${s}</span>`).join('')}</div>
-    </div>`).join(''));
 
   // Publications
   hm('publication-list', D.publications.map((p,i)=>`
@@ -669,7 +686,7 @@ function render() {
       <div class="pub-num">${String(i+1).padStart(2,'0')}</div>
       <div>
         <div><span class="pub-badge ${bc(p.type)}">${p.type}</span></div>
-        ${p.doi?`<a href="${p.doi}" target="_blank" rel="noopener" class="pub-title">${p.title}</a>`:`<span class="pub-title">${p.title}</span>`}
+        ${p.doi ? `<a href="${p.doi}" target="_blank" rel="noopener" class="pub-title">${p.title}</a>` : `<span class="pub-title">${p.title}</span>`}
         <div class="pub-authors">${hl(p.authors)}</div>
         <div class="pub-meta">${p.year} · ${p.journal}</div>
       </div>
@@ -705,6 +722,23 @@ function render() {
       <div class="award-org">${t(a.org)}</div>
     </div>`).join(''));
 
+  // Training
+  hm('training-list', D.training.map(tr=>`
+    <div class="training-item">
+      <div class="training-header">
+        <div>
+          <div class="training-title">${t(tr.title)}</div>
+          <div class="training-org">${t(tr.org)}</div>
+        </div>
+        <div class="training-meta-block">
+          <div class="training-period">${tr.period}</div>
+          <div class="training-hours">${tr.hours}h</div>
+        </div>
+      </div>
+      <div class="training-desc">${t(tr.desc)}</div>
+      <div class="training-tags">${(tr.skills||[]).map(s=>`<span class="training-tag">${s}</span>`).join('')}</div>
+    </div>`).join(''));
+
   // Activities
   hm('activity-list', D.activities.map(a=>`
     <div class="timeline-item">
@@ -716,34 +750,40 @@ function render() {
     </div>`).join(''));
 
   // Skills
-  hm('skill-list', (D.skills[L]||[]).map(s=>{
-    const i=s.indexOf(':');
-    return `<div class="skill-item"><div class="skill-category">${i>=0?s.slice(0,i).trim():''}</div><div class="skill-content">${i>=0?s.slice(i+1).trim():s}</div></div>`;
+  hm('skill-list', (D.skills[L]||[]).map(s => {
+    const i = s.indexOf(':');
+    return `<div class="skill-item">
+      <div class="skill-category">${i>=0 ? s.slice(0,i).trim() : ''}</div>
+      <div class="skill-content">${i>=0 ? s.slice(i+1).trim() : s}</div>
+    </div>`;
   }).join(''));
 }
 
 /* ── EVENTS ── */
-$('lang-toggle').addEventListener('click',()=>{
-  L = L==='en'?'kr':'en';
-  $('lang-flag').textContent  = L==='en'?'🇺🇸':'🇰🇷';
-  $('lang-label').textContent = L==='en'?'English':'한국어';
+$('lang-toggle').addEventListener('click', () => {
+  L = L==='en' ? 'kr' : 'en';
+  $('lang-flag').textContent  = L==='en' ? '🇺🇸' : '🇰🇷';
+  $('lang-label').textContent = L==='en' ? 'English' : '한국어';
   render();
 });
 
 const hbg = $('hamburger'), drw = $('mobile-drawer');
-hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); drw.classList.toggle('open'); });
-document.querySelectorAll('.mob-nav-link').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); drw.classList.remove('open'); }));
+hbg.addEventListener('click', () => { hbg.classList.toggle('open'); drw.classList.toggle('open'); });
+document.querySelectorAll('.mob-nav-link').forEach(a => a.addEventListener('click', () => {
+  hbg.classList.remove('open'); drw.classList.remove('open');
+}));
 
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
-  });
-},{rootMargin:'-30% 0px -60% 0px'});
-document.querySelectorAll('.content-section').forEach(sec => observer.observe(sec));
+document.querySelectorAll('section[id]').forEach(s => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting)
+        document.querySelectorAll('.nav-link').forEach(a =>
+          a.classList.toggle('active', a.getAttribute('href') === '#'+e.target.id));
+    });
+  }, {rootMargin:'-30% 0px -60% 0px', threshold:0}).observe(s);
+});
 
-// 페이지 로딩 즉시 그리기 시작!
 render();
-
 </script>
 </body>
 </html>
