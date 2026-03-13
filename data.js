@@ -121,6 +121,41 @@ const portfolioData = {
         { period: "2021.01 - 2021.12", role: { en: "Director, Communication & PR Department", kr: "소통홍보국장" }, org: { en: "Dormitory Council, Hallym University", kr: "한림대학교 사생위원단" } },
         { period: "2020.03 - 2020.12", role: { en: "Staff Member", kr: "학생회 부원" }, org: { en: "Department Student Council, Hallym University", kr: "한림대학교 데이터사이언스 학생회" } }
     ],
+    training: [
+        {
+            period: "2022.06.27 - 2022.08.31",
+            hours: 360,
+            title: { en: "2022 Data Youth Campus", kr: "2022년 데이터 청년캠퍼스" },
+            org: { en: "Korea Data Industry Promotion Institute (K-DATA)", kr: "한국데이터산업진흥원" },
+            skills: ["Python", "R", "MongoDB", "MySQL", "Data Analysis"],
+            desc: {
+                en: "Completed intensive 360-hour training covering foundational data analysis and programming (Python, R, MongoDB, MySQL). Collaborated with an industry partner on a real-world CNC manufacturing project: identified that 70% of machining defects were tool-related. Demonstrated a ~7.5% Recall improvement by applying feature selection techniques on alternative CNC machine data, showing the potential for smart factory integration at a higher maturity level.",
+                kr: "Python, R, MongoDB, MySQL 등 프로그래밍 언어와 기초 데이터 분석 기술을 집중 이수(360시간). 실제 기업 연계 프로젝트로 CNC 공정 불량 분석 수행 — 가공 불량 원인의 70%가 Tool 관련임을 확인. 스마트 팩토리 1단계 환경의 한계로 즉각 적용은 불가했으나, 타 기기 데이터에 다양한 변수 선택 기법 적용 시 Raw Data 대비 Recall 약 7.5% 향상을 달성하며 향후 적용 가능성을 입증."
+            }
+        },
+        {
+            period: "2021.07.01 - 2021.08.31",
+            hours: 60,
+            title: { en: "VR/AR Content Creator Course", kr: "VR/AR 콘텐츠 제작자 과정" },
+            org: { en: "Hallym University", kr: "한림대학교" },
+            skills: ["Unity", "C#", "VR/AR"],
+            desc: {
+                en: "60-hour course focused on VR/AR content development using the Unity engine, including hands-on app development projects.",
+                kr: "Unity 엔진을 활용한 VR/AR 콘텐츠 제작 실습 60시간 이수. 직접 앱을 개발하는 프로젝트 중심으로 진행."
+            }
+        },
+        {
+            period: "2021.01.01 - 2021.01.31",
+            hours: 30,
+            title: { en: "Mobile App Development with Android Studio", kr: "안드로이드 스튜디오를 활용하여 모바일 앱 제작하기" },
+            org: { en: "Hallym University LINK+ Business Group", kr: "한림대학교 LINK+사업단" },
+            skills: ["Android Studio", "Java", "Mobile UI"],
+            desc: {
+                en: "30-hour course on Android app development using Android Studio. Built a personal calendar app as the final project.",
+                kr: "안드로이드 스튜디오를 활용한 모바일 앱 개발 30시간 이수. 최종 프로젝트로 나만의 캘린더 어플리케이션을 직접 제작."
+            }
+        }
+    ],
     skills: {
         en: ["Programming: Python (PyTorch, TensorFlow, Scikit-learn), R (Tidyverse), SAS (Certified), Java, C, LaTeX", "Research: Deep learning-based biological signal processing, Clinical data preprocessing", "Tools: Docker, Notion, SPSS"],
         kr: ["프로그래밍: Python (PyTorch, TensorFlow, Scikit-learn), R (Tidyverse), SAS (Base Programming 자격), Java, C, LaTeX", "연구 분야: 딥러닝 기반 생체 신호 처리 및 질환 분류, 임상 데이터 전처리 및 결측치 보정", "도구: Docker, Notion, SPSS"]

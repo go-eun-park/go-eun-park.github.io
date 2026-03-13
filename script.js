@@ -43,10 +43,14 @@ function renderContent() {
     safeSetText('mobile-role', roleObj[currentLang]);
     safeSetHTML('about-text', aboutObj[currentLang]);
 
+    // Switch font family for Korean vs English
+    document.documentElement.setAttribute('lang', currentLang === 'kr' ? 'ko' : 'en');
+
     // Section titles
     const titles = {
         'title-edu': { en: 'Education', kr: '학력' },
         'title-work': { en: 'Work Experience', kr: '연구 및 업무 경험' },
+        'title-training': { en: 'Training & Courses', kr: '교육 이수' },
         'title-pub': { en: 'Publications', kr: '논문 실적' },
         'title-pat': { en: 'Patents', kr: '특허 실적' },
         'title-copy': { en: 'Software Copyrights', kr: '소프트웨어 저작권' },
@@ -168,6 +172,30 @@ function renderContent() {
         `).join('');
     }
 
+    // Training
+    const trainingContainer = document.getElementById('training-list');
+    if (trainingContainer && portfolioData.training) {
+        trainingContainer.innerHTML = portfolioData.training.map(t => {
+            const skillTags = (t.skills || []).map(s =>
+                `<span class="training-tag">${s}</span>`).join('');
+            return `
+            <div class="training-item">
+                <div class="training-header">
+                    <div class="training-title-block">
+                        <div class="training-title">${(t.title || {})[currentLang] || ''}</div>
+                        <div class="training-org">${(t.org || {})[currentLang] || ''}</div>
+                    </div>
+                    <div class="training-meta-block">
+                        <div class="training-period">${t.period || ''}</div>
+                        <div class="training-hours">${t.hours}h</div>
+                    </div>
+                </div>
+                <div class="training-desc">${(t.desc || {})[currentLang] || ''}</div>
+                <div class="training-tags">${skillTags}</div>
+            </div>`;
+        }).join('');
+    }
+
     // Activities
     const actContainer = document.getElementById('activity-list');
     if (actContainer) {
@@ -211,9 +239,10 @@ function renderContent() {
 }
 
 // Lang toggle
-document.getElementById('lang-toggle').addEventListener('click', (e) => {
+document.getElementById('lang-toggle').addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'kr' : 'en';
-    document.getElementById('lang-label').textContent = currentLang === 'en' ? '한국어' : 'English';
+    document.getElementById('lang-flag').textContent  = currentLang === 'en' ? '🇺🇸' : '🇰🇷';
+    document.getElementById('lang-label').textContent = currentLang === 'en' ? 'English' : '한국어';
     renderContent();
 });
 

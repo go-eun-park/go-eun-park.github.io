@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goeun Park — Researcher & Engineer</title>
+
+    <!-- Favicon: DNA helix SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231A1A1A'/><text y='24' x='4' font-size='22'>🧬</text></svg>">
+
+    <!-- Fonts: Noto Serif KR (Korean display) + Noto Sans KR (Korean body) + DM Serif Display + JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +19,8 @@
     <!-- Language Toggle -->
     <div class="lang-bar">
         <button id="lang-toggle" class="lang-btn">
-            <span class="lang-indicator"></span>
-            <span id="lang-label">한국어</span>
+            <span id="lang-flag">🇺🇸</span>
+            <span id="lang-label">English</span>
         </button>
     </div>
 
@@ -34,9 +39,9 @@
             </div>
 
             <div class="contact-block">
-                <a href="mailto:goen1182@gmail.com" class="contact-item">
+                <a href="/cdn-cgi/l/email-protection#9bfcf4fef5aaaaa3a9dbfcf6faf2f7b5f8f4f6" class="contact-item">
                     <span class="contact-icon">✉</span>
-                    <span>goen1182@gmail.com</span>
+                    <span><span class="__cf_email__" data-cfemail="9afdf5fff4ababa2a8dafdf7fbf3f6b4f9f5f7">[email&#160;protected]</span></span>
                 </a>
                 <div class="contact-item">
                     <span class="contact-icon">✆</span>
@@ -51,6 +56,7 @@
             <nav class="sidebar-nav">
                 <a href="#education" class="nav-link" data-en="Education" data-kr="학력">Education</a>
                 <a href="#experience" class="nav-link" data-en="Experience" data-kr="연구 경험">Experience</a>
+                <a href="#training" class="nav-link" data-en="Training" data-kr="교육 이수">Training</a>
                 <a href="#publications" class="nav-link" data-en="Publications" data-kr="논문">Publications</a>
                 <a href="#patents" class="nav-link" data-en="Patents" data-kr="특허">Patents</a>
                 <a href="#copyrights" class="nav-link" data-en="Copyrights" data-kr="저작권">Copyrights</a>
@@ -78,12 +84,13 @@
     <!-- Mobile Nav Drawer -->
     <div class="mobile-drawer" id="mobile-drawer">
         <div class="mobile-contact">
-            <a href="mailto:goen1182@gmail.com">goen1182@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#9ef9f1fbf0afafa6acdef9f3fff7f2b0fdf1f3"><span class="__cf_email__" data-cfemail="086f676d663939303a486f65696164266b6765">[email&#160;protected]</span></a>
             <span>+82 10-5673-1182</span>
         </div>
         <nav>
             <a href="#education" class="mob-nav-link" data-en="Education" data-kr="학력">Education</a>
             <a href="#experience" class="mob-nav-link" data-en="Experience" data-kr="연구 경험">Experience</a>
+            <a href="#training" class="mob-nav-link" data-en="Training" data-kr="교육 이수">Training</a>
             <a href="#publications" class="mob-nav-link" data-en="Publications" data-kr="논문">Publications</a>
             <a href="#patents" class="mob-nav-link" data-en="Patents" data-kr="특허">Patents</a>
             <a href="#awards" class="mob-nav-link" data-en="Awards" data-kr="수상">Awards</a>
@@ -127,6 +134,15 @@
                 <div class="section-line"></div>
             </div>
             <div id="work-list" class="timeline"></div>
+        </section>
+
+        <!-- Training & Certifications -->
+        <section id="training" class="content-section">
+            <div class="section-header">
+                <h2 id="title-training" class="section-title">Training</h2>
+                <div class="section-line"></div>
+            </div>
+            <div id="training-list" class="training-list"></div>
         </section>
 
         <!-- Publications -->
@@ -180,16 +196,4 @@
                 <h2 id="title-skill" class="section-title">Skills</h2>
                 <div class="section-line"></div>
             </div>
-            <div id="skill-list" class="skill-list"></div>
-        </section>
-
-        <footer class="page-footer">
-            <p>© 2025 Goeun Park · Built with care</p>
-        </footer>
-
-    </main>
-
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+            <div id="skill-li
