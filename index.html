@@ -817,15 +817,14 @@ document.querySelectorAll('section[id]').forEach(s=>{
 
 // 초기화
 render();
-  /* ── TOP BUTTON EVENT ── */
+/* ── TOP BUTTON EVENT ── */
 window.addEventListener('scroll', () => {
-  if(window.scrollY > 300) $('btn-top').classList.add('show');
-  else $('btn-top').classList.remove('show');
-});
-$('btn-top').addEventListener('click', () => {
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  const topBtn = document.getElementById('btn-top');
+  if (topBtn) {
+    if (window.scrollY > 300) topBtn.classList.add('show');
+    else topBtn.classList.remove('show');
+  }
 });
 </script>
-  <button id="btn-top" aria-label="Go to top">↑</button>
-</body>
+<button id="btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Go to top">↑</button></body>
 </html>
