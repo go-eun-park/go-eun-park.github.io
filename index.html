@@ -14,8 +14,7 @@
   --cream: #F8F5EF; --ink: #1A1A1A; --ink-light: #4A4A4A; --ink-faint: #8A8A8A;
   --accent: #2563EB; --accent-light: #DBEAFE; --border: #E2DDD5;
   --sb-bg: #1A1A1A; --sb-text: #F0EDE7; --sb-muted: #888; --sb-accent: #7CB9FF;
-  --sw: 260px; /* 💡 노트북 화면을 위해 사이드바 너비 살짝 축소 */
-  /* 💡 폰트 통합: 영문은 DM, 한글은 자동으로 Noto가 적용되는 완벽한 조합 */
+  --sw: 260px;
   --fd: 'DM Serif Display', 'Noto Serif KR', Georgia, serif;
   --fb: 'DM Sans', 'Noto Sans KR', system-ui, sans-serif;
   --fm: 'JetBrains Mono', monospace;
@@ -32,7 +31,7 @@ body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:
 .lang-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,0,0,.15)}
 #lang-flag{font-size:17px;line-height:1}
 
-/* 💡 사이드바 (노트북 화면 대응 스크롤바 추가 및 간격 조절) */
+/* Sidebar */
 .sidebar{position:fixed;top:0;left:0;width:var(--sw);height:100vh;background:var(--sb-bg);color:var(--sb-text);z-index:100;overflow-y:auto;}
 .sidebar::-webkit-scrollbar { width: 5px; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
@@ -235,16 +234,16 @@ strong.highlight{color:var(--accent);font-weight:600}
             </a>
         </div>
         <nav class="sidebar-nav">
+            <a href="#skills"       class="nav-link" data-en="Skills"       data-kr="기술">Skills</a>
             <a href="#education"    class="nav-link" data-en="Education"    data-kr="학력">Education</a>
-            <a href="#projects"     class="nav-link" data-en="Projects"     data-kr="프로젝트">Projects</a>
             <a href="#experience"   class="nav-link" data-en="Experience"   data-kr="연구 경험">Experience</a>
-            <a href="#training"     class="nav-link" data-en="Training"     data-kr="교육 이수">Training</a>
+            <a href="#projects"     class="nav-link" data-en="Projects"     data-kr="프로젝트">Projects</a>
             <a href="#publications" class="nav-link" data-en="Publications" data-kr="논문">Publications</a>
             <a href="#patents"      class="nav-link" data-en="Patents"      data-kr="특허">Patents</a>
             <a href="#copyrights"   class="nav-link" data-en="Copyrights"   data-kr="저작권">Copyrights</a>
             <a href="#awards"       class="nav-link" data-en="Awards"       data-kr="수상">Awards</a>
+            <a href="#training"     class="nav-link" data-en="Training"     data-kr="교육 이수">Training</a>
             <a href="#activities"   class="nav-link" data-en="Activities"   data-kr="활동">Activities</a>
-            <a href="#skills"       class="nav-link" data-en="Skills"       data-kr="기술">Skills</a>
         </nav>
     </div>
 </aside>
@@ -268,14 +267,16 @@ strong.highlight{color:var(--accent);font-weight:600}
         <span>+82 10-5673-1182</span>
     </div>
     <nav>
+        <a href="#skills"       class="mob-nav-link" data-en="Skills"       data-kr="기술">Skills</a>
         <a href="#education"    class="mob-nav-link" data-en="Education"    data-kr="학력">Education</a>
-        <a href="#projects"     class="mob-nav-link" data-en="Projects"     data-kr="프로젝트">Projects</a>
         <a href="#experience"   class="mob-nav-link" data-en="Experience"   data-kr="연구 경험">Experience</a>
-        <a href="#training"     class="mob-nav-link" data-en="Training"     data-kr="교육 이수">Training</a>
+        <a href="#projects"     class="mob-nav-link" data-en="Projects"     data-kr="프로젝트">Projects</a>
         <a href="#publications" class="mob-nav-link" data-en="Publications" data-kr="논문">Publications</a>
         <a href="#patents"      class="mob-nav-link" data-en="Patents"      data-kr="특허">Patents</a>
+        <a href="#copyrights"   class="mob-nav-link" data-en="Copyrights"   data-kr="저작권">Copyrights</a>
         <a href="#awards"       class="mob-nav-link" data-en="Awards"       data-kr="수상">Awards</a>
-        <a href="#skills"       class="mob-nav-link" data-en="Skills"       data-kr="기술">Skills</a>
+        <a href="#training"     class="mob-nav-link" data-en="Training"     data-kr="교육 이수">Training</a>
+        <a href="#activities"   class="mob-nav-link" data-en="Activities"   data-kr="활동">Activities</a>
     </nav>
 </div>
 
@@ -295,14 +296,14 @@ strong.highlight{color:var(--accent);font-weight:600}
         </div>
     </section>
 
+    <section id="skills" class="content-section">
+        <div class="section-header"><h2 id="title-skill" class="section-title">Skills</h2><div class="section-line"></div></div>
+        <div id="skill-list" class="skill-list"></div>
+    </section>
+
     <section id="education" class="content-section">
         <div class="section-header"><h2 id="title-edu" class="section-title">Education</h2><div class="section-line"></div></div>
         <div id="education-list" class="timeline"></div>
-    </section>
-
-    <section id="projects" class="content-section">
-        <div class="section-header"><h2 id="title-proj" class="section-title">Projects</h2><div class="section-line"></div></div>
-        <div id="project-list"></div>
     </section>
 
     <section id="experience" class="content-section">
@@ -310,9 +311,9 @@ strong.highlight{color:var(--accent);font-weight:600}
         <div id="work-list" class="timeline"></div>
     </section>
 
-    <section id="training" class="content-section">
-        <div class="section-header"><h2 id="title-training" class="section-title">Training &amp; Courses</h2><div class="section-line"></div></div>
-        <div id="training-list" class="training-list"></div>
+    <section id="projects" class="content-section">
+        <div class="section-header"><h2 id="title-proj" class="section-title">Projects</h2><div class="section-line"></div></div>
+        <div id="project-list"></div>
     </section>
 
     <section id="publications" class="content-section">
@@ -335,14 +336,14 @@ strong.highlight{color:var(--accent);font-weight:600}
         <div id="award-list" class="award-grid"></div>
     </section>
 
+    <section id="training" class="content-section">
+        <div class="section-header"><h2 id="title-training" class="section-title">Training &amp; Courses</h2><div class="section-line"></div></div>
+        <div id="training-list" class="training-list"></div>
+    </section>
+
     <section id="activities" class="content-section">
         <div class="section-header"><h2 id="title-act" class="section-title">Activities</h2><div class="section-line"></div></div>
         <div id="activity-list" class="timeline"></div>
-    </section>
-
-    <section id="skills" class="content-section">
-        <div class="section-header"><h2 id="title-skill" class="section-title">Skills</h2><div class="section-line"></div></div>
-        <div id="skill-list" class="skill-list"></div>
     </section>
 
     <footer class="page-footer"><p>© 2025 Goeun Park · Built with care</p></footer>
@@ -441,7 +442,6 @@ const D = {
     kr:["프로그래밍: Python (PyTorch, TensorFlow, Scikit-learn), R (Tidyverse), SAS (Base Programming 자격), Java, C, LaTeX","연구 분야: 딥러닝 기반 생체 신호 처리 및 질환 분류, 임상 데이터 전처리 및 결측치 보정","도구: Docker, Notion, SPSS"]
   },
   projects:[
-
       {
       kicker:{en:"Industry Project · 2022.07 – 2022.08",kr:"기업 연계 프로젝트 · 2022.07 – 2022.08"},
       name:{en:"CNC Machining Defect Analysis",kr:"CNC 공정 불량 원인 분석 및 예측"},
