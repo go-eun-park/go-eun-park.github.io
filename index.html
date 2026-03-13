@@ -355,7 +355,7 @@ const D = {
      desc:{en:"Specialization: Bio Statistics in Clinical Medicine / Big Data",kr:"세부전공: 임상의학통계 / 빅데이터"}}
   ],
   work:[
-    {period:"2024.04 - 2024.09",
+    {period:"2024.04 - 2025.08",
      role:{en:"Research Assistant",kr:"연구원"},
      org:{en:"Cardiovascular Disease Research Center (RLRC), Hallym University",kr:"한림대학교 Cardiovascular Disease Research Center (RLRC)"},
      desc:{en:"Conducted AI research projects focused on disease prediction using healthcare big data. Key projects include IMU Gait Data-Based CKD Classification and Multimodal Biosignal-Based Sleep Staging.",kr:"의료 빅데이터 및 웨어러블 데이터를 활용한 질병 예측 AI 연구 수행. (보행 데이터 기반 만성 신장 질환 분류, 다중 생체 신호 기반 수면 단계 분류 등)"}},
@@ -452,9 +452,9 @@ const D = {
       tags:["R","Spatial Analysis","Public Data","EDA","Visualization"]
     },
     {
-      kicker:{en:"Research · 2024.04 – 2024.09",kr:"연구 · 2024.04 – 2024.09"},
+      kicker:{en:"Research · 2024.04 – Present",kr:"연구 · 2024.04 – 현재"},
       name:{en:"Hallym University RLRC Research Center",kr:"한림대학교 RLRC 연구센터"},
-      meta:{en:"Research Assistant · Cardiovascular Disease Research Center",kr:"연구원 · 심뇌혈관질환융합연구소"},
+      meta:{en:"Research Assistant",kr:"연구원"},
       badges:[{label:{en:"IEEE JBHI (Under Review)",kr:"IEEE JBHI 투고"},cls:"badge-blue"},{label:{en:"5 Patents Filed",kr:"특허 5건"},cls:"badge-green"}],
       summary:{
         en:"Six months of full-time AI research spanning five distinct clinical projects. Gained hands-on experience with Docker, remote server environments, and production-grade deep learning pipelines. Each project ranged from leading roles to supporting contributions.",
@@ -506,7 +506,6 @@ const D = {
     }
   ]
 };
-
 /* ── HELPERS ── */
 let L = 'en';
 const $ = id => document.getElementById(id);
@@ -515,7 +514,21 @@ const hm = (id, v) => { const e=$(id); if(e) e.innerHTML  = v||''; };
 const t  = obj => (obj||{})[L] || '';
 const hl = s => (s||'').replace(/(Goeun Park|G\.\s*Park|박고은)/gi,'<strong class="highlight">$1</strong>');
 const bc = type => { if(!type) return 'journal'; const s=type.toLowerCase(); return s.includes('scie')?'scie':s.includes('conference')?'conference':'journal'; };
-const timeline = arr => arr.map(i=>`<div class="timeline-item"><div class="timeline-left"><div class="timeline-period">${i.period||''}</div></div><div class="timeline-right"><div class="timeline-title">${t(i.role||i.school)}</div><div class="timeline-sub">${t(i.org||i.degree)}</div>${t(i.desc||i.desc)?`<div class="timeline-desc">${t(i.desc)}</div>`:''}</div></div>`).join('');
+
+/* 💡 마법의 자동 정렬 기능 (어디서든 알아서 최신순!) 💡 */
+const getSortVal = (item) => {
+  // kicker, period, date, year 중 날짜가 적힌 텍스트를 찾음
+  let s = item.kicker ? item.kicker.en : (item.period || item.date || item.year || '');
+  // 'Present'나 '현재'라는 단어가 있으면 무조건 점수 1등(최상단)
+  if (/present|현재/i.test(s)) return 999999; 
+  // '2024.04' 또는 '2021' 같은 숫자를 찾아내서 점수로 변환 (예: 202404)
+  const match = s.match(/(20\d{2})(?:\.(\d{1,2}))?/); 
+  return match ? parseInt(match[1]) * 100 + (parseInt(match[2]) || 0) : 0;
+};
+// 모든 배열을 찾아서 렌더링 전에 알아서 최신순으로 줄 세우기
+['education', 'work', 'projects', 'training', 'publications', 'patents', 'copyrights', 'awards', 'activities'].forEach(key => {
+  if (D[key] && Array.isArray(D[key])) D[key].sort((a, b) => getSortVal(b) - getSortVal(a));
+});
 
 /* ── RENDER ── */
 function render() {
@@ -597,7 +610,7 @@ function render() {
     </div>`;
   }).join(''));
 
-
+  // Training
   hm('training-list', D.training.map(tr=>`
     <div class="training-item">
       <div class="training-header">
@@ -685,18 +698,14 @@ const hbg = $('hamburger'), drw = $('mobile-drawer');
 hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); drw.classList.toggle('open'); });
 document.querySelectorAll('.mob-nav-link').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); drw.classList.remove('open'); }));
 
-// 스크롤 시 사이드바 메뉴 자동 하이라이트 기능 (정상화)
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting) {
-      document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
-    }
+    if(e.isIntersecting) document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
   });
 },{rootMargin:'-30% 0px -60% 0px'});
-
 document.querySelectorAll('.content-section').forEach(sec => observer.observe(sec));
 
-// ★ 가장 중요한 부분: 페이지가 열리자마자 데이터를 그려라! ★
+// 페이지 로딩 즉시 그리기 시작!
 render();
 
 </script>
