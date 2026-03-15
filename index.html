@@ -1470,6 +1470,28 @@
         [data-theme="dark"] .hits-dark {
             display: block;
         }
+
+        /* ── SECURITY: ANTI-COPY & DRAG ── */
+        body {
+            -webkit-user-select: none;
+            /* Chrome, Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE */
+            user-select: none;
+            /* Standard */
+        }
+
+        img {
+            -webkit-user-drag: none;
+            /* 이미지 드래그 방지 */
+        }
+
+        /* Hits 뱃지 같은 링크가 걸린 이미지는 클릭될 수 있도록 예외 처리 */
+        .hits-badge img {
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -1490,7 +1512,11 @@
         <div class="sidebar-inner">
             <div class="profile-wrap">
                 <div class="profile-img-wrap">
-                    <img src="profile.jpg" alt="Goeun Park" class="profile-img">
+                    <div class="profile-img"
+                        style="background-image: url('profile.jpg'); background-size: cover; background-position: center;">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            alt="Goeun Park" style="width: 100%; height: 100%; opacity: 0;">
+                    </div>
                     <div class="profile-ring"></div>
                 </div>
                 <div>
@@ -1526,7 +1552,11 @@
 
     <header class="mobile-header">
         <div class="mobile-profile">
-            <img src="profile.jpg" alt="Goeun Park" class="mobile-profile-img">
+            <div class="mobile-profile-img"
+                style="background-image: url('profile.jpg'); background-size: cover; background-position: center;">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    alt="Goeun Park" style="width: 100%; height: 100%; opacity: 0;">
+            </div>
             <div>
                 <h1 id="mobile-name" class="mobile-name">Goeun Park</h1>
                 <p id="mobile-role" class="mobile-role">Researcher · Engineer</p>
@@ -2142,6 +2172,20 @@
             if (topBtn) {
                 if (window.scrollY > 300) topBtn.classList.add('show');
                 else topBtn.classList.remove('show');
+            }
+        });
+
+        /* ── SECURITY: ANTI-RIGHT-CLICK & SHORTCUTS ── */
+        document.addEventListener('contextmenu', (e) => e.preventDefault()); // 우클릭 방지
+
+        document.addEventListener('keydown', (e) => {
+            // Ctrl + C, S, U, P (복사, 저장, 소스보기, 인쇄) 막기
+            if (e.ctrlKey && ['c', 'C', 's', 'S', 'u', 'U', 'p', 'P'].includes(e.key)) {
+                e.preventDefault();
+            }
+            // F12 및 Ctrl+Shift+I (개발자 도구) 막기
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['i', 'I'].includes(e.key))) {
+                e.preventDefault();
             }
         });
     </script>
