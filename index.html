@@ -12,7 +12,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <style>
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />    <style>
         /* ── LIGHT MODE (default) ── */
         :root {
             --cream: #F8F5EF;
@@ -30,9 +32,12 @@
             --sb-accent: #7CB9FF;
             --sw: 260px;
             /* 💡 폰트 통일: 명조체 제거, 세련된 고딕(DM Sans + Noto Sans KR)으로 통일 */
-            --fb: 'DM Sans', 'Noto Sans KR', system-ui, sans-serif;
+            --fb: 'Pretendard', sans-serif;
             --fm: 'JetBrains Mono', monospace;
             --ease: cubic-bezier(.25, .46, .45, .94);
+        }
+        .eng {
+            font-family: 'Pretendard', sans-serif !important;
         }
 
         /* ── DARK MODE ── */
@@ -2187,6 +2192,27 @@
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['i', 'I'].includes(e.key))) {
                 e.preventDefault();
             }
+        });
+        // [자동 폰트 적용] 텍스트에 한글이 없는지 검사하여 프리텐다드(.eng) 적용
+        window.addEventListener('DOMContentLoaded', () => {
+            // 글자가 들어갈 수 있는 모든 주요 태그를 선택
+            const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, li, div, button');
+            
+            textElements.forEach(el => {
+                const text = el.textContent.trim();
+                
+                if (text.length > 0) {
+                    // 한글(자음, 모음, 완성형 글자)이 하나라도 섞여 있는지 확인
+                    const hasKorean = /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(text);
+                    // 영어 알파벳이 포함되어 있는지 확인
+                    const hasEnglish = /[a-zA-Z]/.test(text);
+                    
+                    // 한글이 단 하나도 없고, 영어가 포함된 순수 영문 블록에만 eng 클래스를 자동 추가
+                    if (!hasKorean && hasEnglish) {
+                        el.classList.add('eng');
+                    }
+                }
+            });
         });
     </script>
     <button id="btn-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Go to top">↑</button>
