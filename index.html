@@ -1477,16 +1477,8 @@
         }
 
         /* ── SECURITY: ANTI-COPY & DRAG ── */
-        body {
-            -webkit-user-select: none;
-            /* Chrome, Safari */
-            -moz-user-select: none;
-            /* Firefox */
-            -ms-user-select: none;
-            /* IE */
-            user-select: none;
-            /* Standard */
-        }
+        
+       
 
         img {
             -webkit-user-drag: none;
@@ -1497,6 +1489,12 @@
         .hits-badge img {
             pointer-events: auto;
         }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
     </style>
 </head>
 
@@ -1685,7 +1683,6 @@
             </div>
             <div id="activity-list" class="timeline"></div>
         </section>
-
         <footer class="page-footer">
             <div class="footer-inner">
                 <span>© 2026 Goeun Park · Built with care</span>
@@ -1713,6 +1710,12 @@
             },
             education: [
                 {
+                    period: "2024.09 - Present",
+                    school: { en: "Hallym University, Republic of Korea", kr: "한림대학교" },
+                    degree: { en: "M.S. in Artificial Intelligence Convergence (Leave of Absence)", kr: "인공지능융합학과 석사과정 (휴학 중)" },
+                    desc: { en: "Research focus: Biosignal-based deep learning, Clinical AI", kr: "연구 분야: 생체신호 기반 딥러닝, 임상 AI" }
+                },
+                {
                     period: "2020.03 - 2024.02",
                     school: { en: "Hallym University, Republic of Korea", kr: "한림대학교" },
                     degree: { en: "B.S. in Bio Statistics & Software (Double Major)", kr: "데이터사이언스(이학사) 및 소프트웨어(공학사) 복수전공" },
@@ -1721,7 +1724,7 @@
             ],
             work: [
                 {
-                    period: "2024.04 - 2025.08",
+                    period: "2024.04 - 2024.08",
                     role: { en: "Research Assistant", kr: "연구원" },
                     org: { en: "Cardiovascular Disease Research Center (RLRC), Hallym University", kr: "한림대학교 Cardiovascular Disease Research Center (RLRC)" },
                     desc: { en: "Conducted AI research projects focused on disease prediction using healthcare big data. Key projects include IMU Gait Data-Based CKD Classification and Multimodal Biosignal-Based Sleep Staging.", kr: "의료 빅데이터 및 웨어러블 데이터를 활용한 질병 예측 AI 연구 수행. (보행 데이터 기반 만성 신장 질환 분류, 다중 생체 신호 기반 수면 단계 분류 등)" }
@@ -2131,6 +2134,7 @@
                 return `<div class="skill-item"><div class="skill-category">${i >= 0 ? s.slice(0, i).trim() : ''}</div><div class="skill-content">${i >= 0 ? s.slice(i + 1).trim() : s}</div></div>`;
             }).join(''));
         }
+        
 
         /* ── UI EVENTS ── */
         $('theme-light').onclick = () => setTheme(false);
