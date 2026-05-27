@@ -1597,9 +1597,14 @@
                 <div class="hero-tags">
                     <span class="tag">Bio Statistics</span>
                     <span class="tag">Deep Learning</span>
-                    <span class="tag">Clinical Data</span>
+                    <!-- <span class="tag">Clinical Data</span> -->
+                    <!-- <span class="tag">Signal Processing</span> -->
+                    <!-- <span class="tag">Wearable Sensors</span> -->
+                    <span class="tag">Multimodal Pipeline</span>
+                    <span class="tag">Model Evaluation</span>
+                    <span class="tag">Ablation & Spectral Analysis</span>
                     <span class="tag">Signal Processing</span>
-                    <span class="tag">Wearable Sensors</span>
+                    <!-- <span class="tag">AI Safety</span> -->
                 </div>
             </div>
         </section>
@@ -1704,8 +1709,8 @@
                 name: { en: "Goeun Park", kr: "박고은" },
                 role: { en: "Researcher · Engineer", kr: "연구원 · 엔지니어" },
                 about: {
-                    en: "Just as a robust model stems from high-quality data, I believe an engineer's capability is built upon diverse experiential data. Through my involvement in over six clinical AI projects, I have developed strong expertise in biosignal preprocessing and deep learning optimization, leading to tangible outcomes like SCI(E) papers and patents. Simultaneously, my hands-on experience in full-stack web development has honed my ability to bridge the gap between laboratory research and real-world products. Leveraging my unique dataset of experiences, I aim to be an End-to-End engineer capable of seamlessly connecting medical big data analysis with practical service implementation.",
-                    kr: "좋은 모델이 양질의 데이터에서 나오듯, 엔지니어의 역량도 다양한 경험의 데이터에서 비롯된다고 생각합니다. 6건 이상의 임상 AI 프로젝트를 수행하며 생체 신호 처리와 딥러닝 최적화 역량을 길렀고, 이를 SCI(E) 논문 게재와 다수의 특허 출원으로 증명했습니다. 동시에 프론트엔드 및 웹 서비스 개발 프로젝트를 통해 연구실 안의 기술을 실제 프로덕트로 연결하는 감각을 익혔습니다. 저만의 경험 데이터를 바탕으로, 의료 빅데이터 분석부터 서비스 구현까지 End-to-End로 문제를 해결하는 엔지니어를 지향합니다."
+                    en: "Just as a robust model stems from high-quality data, I believe an engineer's capability is built upon diverse experiential data. Through six clinical AI projects, I have designed and validated multimodal biosignal pipelines end-to-end, spanning IMU, ECG, speech, and video signals. My focus has been less on maximizing accuracy and more on understanding when and why models fail, through ablation studies, spectral analysis, and systematic pipeline comparison.",
+                    kr: "좋은 모델이 양질의 데이터에서 나오듯, 엔지니어의 역량도 다양한 경험의 데이터에서 비롯된다고 생각합니다. 6건의 임상 AI 프로젝트에서 IMU, ECG, 음성, 영상 등 다양한 생체신호의 분류 파이프라인을 처음부터 끝까지 설계하고 검증했습니다. 단순 성능 향상보다 모델이 언제 왜 실패하는지를 체계적으로 규명하는 것에 집중해왔습니다."
                 }
             },
             education: [
@@ -1967,10 +1972,10 @@
                             num: "⑤",
                             title: { en: "CKD Gait Analysis (Lead Project)", kr: "CKD 보행 분석 (주 프로젝트)" },
                             desc: {
-                                en: "Lead project. Developed a <strong>CNN-based pipeline to classify CKD patients vs. healthy controls</strong> from waist/wrist IMU gait signals. Compared windowing and resampling strategies across two walking tasks. <strong>Best result: resampling + waist + ST walk — Accuracy 0.850, AUROC 0.893</strong>. Under review at JMIR mHealth and uHealth. 2 domestic + 1 PCT international patents filed.",
-                                kr: "주도 프로젝트. 허리·손목 IMU 보행 신호에서 <strong>CNN으로 CKD 환자와 정상인을 분류</strong>. 윈도잉·리샘플링 전략 비교, 두 가지 보행 과제 실험. <strong>최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.850, AUROC 0.893</strong>. JMIR mHealth 투고 중. 국내 특허 2건 + PCT 국제특허 1건 출원."
+                                en: "Lead project. Developed a <strong>CNN-based pipeline to classify CKD patients vs. healthy controls</strong> from waist/wrist IMU gait signals. Compared windowing and resampling strategies across two walking tasks. <strong>Best result: resampling + waist + ST walk — Accuracy 0.850, AUROC 0.893</strong>. Under review at EAAI. 2 domestic + 1 PCT international patents filed. </br></br>Beyond pipeline design, this project focused on understanding model failure modes — using confidence-based spectral analysis and ablation experiments (FIFS, Temporal Masking) to quantify which frequency bands and gait phases drive classification decisions.",
+                                kr: "주도 프로젝트. 허리·손목 IMU 보행 신호에서 <strong>CNN으로 CKD 환자와 정상인을 분류</strong>. 윈도잉·리샘플링 전략 비교, 두 가지 보행 과제 실험. <strong>최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.850, AUROC 0.893</strong>. EAAI 투고 중. 국내 특허 2건 + PCT 국제특허 1건 출원.</br></br>파이프라인 설계를 넘어, 분류 확신도 기반 Spectral Analysis와 주파수/시간 구간 Ablation으로 모델이 어떤 신호를 근거로 판단하는지, 어떤 조건에서 실패하는지를 정량화했습니다."
                             },
-                            result: { label: { en: "AUROC 0.893 · JMIR mHealth (Under Review)", kr: "AUROC 0.893 · JMIR mHealth 투고" }, cls: "blue" },
+                            result: { label: { en: "AUROC 0.893 · EAAI (Under Review)", kr: "AUROC 0.893 · JMIR mHealth 투고" }, cls: "blue" },
                             tags: ["CNN", "IMU", "Signal Processing", "PyTorch", "Docker", "Gait Analysis"]
                         },
                         {
