@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goeun Park — Statistics · AI · Time-Series</title>
-    <link rel="icon" type="image/svg+xml"
+    <title>Goeun Park — Multimodal Learning · Time-Series · AI</title>    <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232563EB'/><path d='M15 50h15l10-30 10 60 10-30h10' fill='none' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/><path d='M75 35l15 15-15 15' fill='none' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +12,10 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
-    
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />    <style>
+
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
         /* ── LIGHT MODE (default) ── */
         :root {
             --cream: #F8F5EF;
@@ -36,6 +37,7 @@
             --fm: 'JetBrains Mono', monospace;
             --ease: cubic-bezier(.25, .46, .45, .94);
         }
+
         .eng {
             font-family: 'Pretendard', sans-serif !important;
         }
@@ -1254,7 +1256,10 @@
 
         /* ── RESPONSIVE ── */
         @media(max-width:900px) {
-            .skill-list { grid-template-columns: 1fr 1fr; }
+            .skill-list {
+                grid-template-columns: 1fr 1fr;
+            }
+
             :root {
                 --sw: 240px
             }
@@ -1478,8 +1483,8 @@
         }
 
         /* ── SECURITY: ANTI-COPY & DRAG ── */
-        
-       
+
+
 
         img {
             -webkit-user-drag: none;
@@ -1492,10 +1497,37 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-8px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(-8px);
+            }
         }
 
+        .lab-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .lab-link:hover {
+            color: var(--accent);
+        }
+
+        .lab-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+        /* 연락처는 드래그로 선택하고 복사할 수 있도록 허용 */
+        .contact-block .contact-item,
+        .contact-block .contact-item *,
+        .mobile-contact,
+        .mobile-contact * {
+            -webkit-user-select: text !important;
+            user-select: text !important;
+        }
     </style>
 </head>
 
@@ -1529,8 +1561,9 @@
                 </div>
             </div>
             <div class="contact-block">
-                <a href="mailto:luminous_@kakao.com" class="contact-item">
-                    <span class="contact-icon">✉</span><span>luminous_@kakao.com</span>
+                <a href="mailto:go.eun.park01@gmail.com" class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <span>go.eun.park01@gmail.com</span>
                 </a>
                 <div class="contact-item">
                     <span class="contact-icon">✆</span><span>+82 10-5673-1182</span>
@@ -1574,7 +1607,7 @@
 
     <div class="mobile-drawer" id="mobile-drawer">
         <div class="mobile-contact">
-            <a href="mailto:goen1182@gmail.com">goen1182@gmail.com</a>
+            <a href="mailto:go.eun.park01@gmail.com">go.eun.park01@gmail.com</a>
             <span>+82 10-5673-1182</span>
         </div>
         <nav>
@@ -1597,16 +1630,21 @@
             <div>
                 <p id="about-text" class="hero-text"></p>
                 <div class="hero-tags">
-                    <span class="tag">Statistics</span>
-                    <span class="tag">AI</span>
-                    <span class="tag">Time-Series</span>
-                    <span class="tag">Data Science</span>
-                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Multimodal Learning</span>
+                    <span class="tag">Time-Series Analysis</span>
                     <span class="tag">Deep Learning</span>
+                    <span class="tag">Statistical Modeling</span>
+
+                    <!-- <span class="tag">Statistics</span> -->
+                    <!-- <span class="tag">AI</span> -->
+                    <!-- <span class="tag">Time-Series</span> -->
+                    <!-- <span class="tag">Data Science</span> -->
+                    <!-- <span class="tag">Machine Learning</span> -->
+                    <!-- <span class="tag">Deep Learning</span> -->
                     <!-- <span class="tag">Signal Processing</span> -->
                     <!-- <span class="tag">Wearable Sensors</span> -->
-                    <span class="tag">Model Evaluation</span>
-                    <span class="tag">Signal Processing</span>
+                    <!-- <span class="tag">Model Evaluation</span> -->
+                    <!-- <span class="tag">Signal Processing</span> -->
                     <!-- <span class="tag">AI Safety</span> -->
                 </div>
             </div>
@@ -1711,32 +1749,67 @@
             info: {
                 name: { en: "Goeun Park", kr: "박고은" },
                 role: { en: "Researcher · Engineer", kr: "연구자 · 엔지니어" },
-                about:{
-                en: "I work at the intersection of statistical analysis, artificial intelligence, and real-world data. My research experience spans time-dependent signals, multimodal data, and predictive modeling, with an emphasis on systematic comparison, model evaluation, and understanding how models behave across different data conditions. I am particularly interested in statistics, AI, time-series and sequential data, and data-driven modeling.",
-                kr: "통계적 분석과 인공지능을 바탕으로 실제 데이터의 구조를 이해하고 예측 모델을 개발·검증해왔습니다. 시간에 따라 변화하는 신호와 다중 모달 데이터를 포함한 다양한 데이터셋을 다루며, 단순한 성능 향상보다 조건에 따른 체계적인 비교와 모델 평가, 그리고 데이터와 모델의 특성에 따른 성능 차이를 이해하는 데 관심을 두고 있습니다. 특히 통계, 인공지능, 시계열·순차 데이터, 데이터 기반 모델링에 관심이 있습니다."
+                about: {
+                    en: "I work at the intersection of statistical analysis, artificial intelligence, and real-world data. My experience includes time-series preprocessing, deep learning modeling, and systematic evaluation across different data conditions. Building on this foundation, I am expanding my research interests toward multimodal learning, exploring how different types of data can complement one another to capture richer information and improve predictive modeling.",
+                    kr: "통계적 분석과 인공지능을 바탕으로 실제 데이터의 특성을 이해하고 예측 모델을 개발·검증해왔습니다. 시계열 데이터 전처리와 딥러닝 모델링, 다양한 데이터 조건에 따른 체계적인 성능 비교와 평가를 수행했습니다. 이러한 경험을 바탕으로 멀티모달 학습으로 연구 관심을 확장하고 있으며, 서로 다른 형태의 데이터가 가진 상호보완적인 정보를 함께 활용하여 더 풍부한 정보를 학습하고 예측 모델을 개선하는 방법에 관심을 두고 있습니다."
                 }
             },
             education: [
                 {
-                    period: "2024.09 - Present",
-                    school: { en: "Hallym University, Republic of Korea", kr: "한림대학교" },
-                    degree: { en: "M.S. in Artificial Intelligence Convergence (Leave of Absence)", kr: "인공지능융합학과 석사과정 (휴학 중)" },
-                    desc: { en: "Research focus: Biosignal-based deep learning, Clinical AI", kr: "연구 분야: 생체신호 기반 딥러닝, 임상 AI" }
+                    period: "2027.03 (Expected)",
+                    school: {
+                        en: "Sungkyunkwan University, Republic of Korea",
+                        kr: "성균관대학교"
+                    },
+                    degree: {
+                        en: "Incoming M.S. Student in Applied Artificial Intelligence",
+                        kr: "인공지능융합학과 석사과정 입학 예정"
+                    },
+                    desc: {
+                        en: '<a href="https://sites.google.com/view/dxlab" class="lab-link" target="_blank" rel="noopener noreferrer">Data eXperience Laboratory (DXLAB)</a> · Advisor: Prof. Eunil Park',
+                        kr: '<a href="https://sites.google.com/view/dxlab" class="lab-link" target="_blank" rel="noopener noreferrer">Data eXperience Laboratory (DXLAB)</a> · 지도교수: 박은일'
+                    }
                 },
                 {
                     period: "2020.03 - 2024.02",
-                    school: { en: "Hallym University, Republic of Korea", kr: "한림대학교" },
-                    degree: { en: "B.S. in Bio Statistics & Software (Double Major)", kr: "데이터사이언스(이학사) 및 소프트웨어(공학사) 복수전공" },
-                    desc: { en: "Specialization: Bio Statistics in Clinical Medicine / Big Data", kr: "세부전공: 임상의학통계 / 빅데이터" }
+                    school: {
+                        en: "Hallym University, Republic of Korea",
+                        kr: "한림대학교"
+                    },
+                    degree: {
+                        en: "Bachelor’s Degrees in Data Science and Software (Double Major)",
+                        kr: "데이터사이언스(이학사) 및 소프트웨어(공학사) 복수전공"
+                    },
+                    desc: {
+                        en: "Specializations: Biostatistics in Clinical Medicine / Big Data",
+                        kr: "세부전공: 임상의학통계 / 빅데이터"
+                    }
                 }
             ],
             work: [
                 {
+                    period: "2024.09 - 2026.09",
+                    role: {
+                        en: "Student Researcher",
+                        kr: "학생연구원"
+                    },
+                    org: {
+                        en: "Cardiovascular Disease Research Center (RLRC), Hallym University",
+                        kr: "한림대학교 Cardiovascular Disease Research Center (RLRC)"
+                    },
+                    desc: {
+                        en: "Participated in time-series and multimodal AI research, including IMU gait-based CKD classification and multimodal biosignal-based sleep staging. Conducted data preprocessing, model experiments, and performance evaluation through September 2025, followed by manuscript preparation and revision.",
+                        kr: "IMU 보행 데이터 기반 만성신장질환 분류 및 다중 생체신호 기반 수면 단계 분류 등 시계열·멀티모달 AI 연구에 참여했습니다. 2025년 9월까지 데이터 전처리, 모델 실험 및 성능 평가를 수행했으며, 이후 논문 원고 작성과 수정 작업을 이어갔습니다."
+                    }
+                },
+                {
                     period: "2024.05 - 2024.08",
                     role: { en: "Research Assistant", kr: "연구원" },
                     org: { en: "Cardiovascular Disease Research Center (RLRC), Hallym University", kr: "한림대학교 Cardiovascular Disease Research Center (RLRC)" },
-                    desc: { en: "Conducted AI research projects focused on disease prediction using healthcare big data. Key projects include IMU Gait Data-Based CKD Classification and Multimodal Biosignal-Based Sleep Staging.", kr: "의료 빅데이터 및 웨어러블 데이터를 활용한 질병 예측 AI 연구 수행. (보행 데이터 기반 만성 신장 질환 분류, 다중 생체 신호 기반 수면 단계 분류 등)" }
-                },
+                    desc: {
+                        en: "Worked on data preprocessing, input construction, and baseline deep learning experiments for time-series prediction and classification tasks.",
+                        kr: "시계열 데이터 기반 예측·분류 연구에서 데이터 전처리와 모델 입력 구성, 기초 딥러닝 모델 실험을 수행했습니다."
+                    }                },
                 {
                     period: "2023.01 - 2024.02",
                     role: { en: "Undergraduate Intern", kr: "학부생 인턴" },
@@ -1865,136 +1938,139 @@
             },
             projects: [
                 {
-                                    kicker: { en: "Research · 2024.04 - Present", kr: "연구 · 2024.04 - 현재" },
-                                    name: { en: "Hallym University RLRC Research Center", kr: "한림대학교 RLRC 연구센터" },
-                                    meta: { en: "Research Assistant · Cardiovascular Disease Research Center", kr: "연구원 · 심뇌혈관질환융합연구소" },
-                                    badges: [
-                                        { label: { en: "EAAI (Under Review)", kr: "EAAI 투고" }, cls: "badge-blue" },
-                                        { label: { en: "3 Papers · 5 Patents · 2 Copyrights", kr: "논문 3편 · 특허 5건 · 저작권 2건" }, cls: "badge-green" }
-                                    ],
-                                    summary: {
-                                        en: "Over a year of full-time AI research spanning <strong>six distinct clinical projects</strong>. Gained hands-on experience with Docker, remote server environments, and production-grade deep learning pipelines. Each project ranged from leading roles to supporting contributions.",
-                                        kr: "<strong>6개의 임상 AI 프로젝트</strong>를 수행하며 Docker, 원격 서버 환경, 딥러닝 파이프라인을 실전에서 익혔습니다. 주도적으로 이끈 프로젝트부터 보조로 참여한 과제까지 다양한 역할을 맡았습니다."
-                                    },
-                                    tags: ["Python", "PyTorch", "TensorFlow", "CNN", "Docker", "mRMR", "XGBoost", "pycaret", "Signal Processing"],
-                                    subs: [
-                                        {
-                                            num: "①",
-                                            title: { en: "Dysarthria Detection from Speech", kr: "구음장애 음성 분류" },
-                                            desc: {
-                                                en: "Built a deep learning classifier distinguishing dysarthric patients from healthy speakers using AI-HUB speech data and self-collected recordings. Deployed in a <strong>secure remote server environment (AI-HUB) via Docker</strong>. Achieved <strong>5-fold accuracy of 96.01 ± 5.02%</strong> on a single-command task. Published at IEEE ICCE 2025 and a related patent filed.",
-                                                kr: "AI-HUB 음성 데이터와 자체 수집 일반인 데이터를 활용해 구음장애 환자 분류 딥러닝 모델 개발. <strong>Docker 기반 원격 서버 환경(AI-HUB)</strong> 첫 경험. 단일 명령어 기준 <strong>5-fold 정확도 96.01 ± 5.02% 달성</strong>. IEEE ICCE 2025 게재 및 관련 특허 출원."
-                                            },
-                                            result: { label: { en: "Acc 96.01% · IEEE ICCE 2025 · Patent", kr: "정확도 96.01% · IEEE ICCE 2025 · 특허" }, cls: "green" },
-                                            tags: ["Python", "Deep Learning", "Docker", "AI-HUB", "Speech Processing"]
-                                        },
-                                        {
-                                            num: "②",
-                                            title: { en: "Sleep Stage Classification", kr: "수면 단계 분류" },
-                                            desc: {
-                                                en: "Supporting role in variable selection and statistical analysis for a <strong>multimodal biosignal-based sleep staging model</strong> using patch-type wearable ECG and impedance pneumography. Used pycaret for automated feature evaluation. Published in <em>Computers in Biology and Medicine</em> (SCIE), with a related patent and software copyright registered.",
-                                                kr: "패치형 웨어러블 심전도(ECG) 및 임피던스 호흡 신호 기반 <strong>다중 생체신호 수면 단계 분류</strong> 모델의 변수 선택 및 통계분석 보조. pycaret 활용. <em>Computers in Biology and Medicine</em> (SCIE) 게재, 관련 특허 및 소프트웨어 저작권 등록."
-                                            },
-                                            result: { label: { en: "SCIE Published · Patent · S/W Copyright", kr: "SCIE 게재 · 특허 · 저작권" }, cls: "blue" },
-                                            tags: ["pycaret", "Statistical Analysis", "ECG", "Multimodal Signals"]
-                                        },
-                                        {
-                                            num: "③",
-                                            title: { en: "Moyamoya Disease Genomics", kr: "모야모야병 유전체 분석" },
-                                            desc: {
-                                                en: "Searched for novel protein biomarkers in Moyamoya disease beyond clinically established ones. Applied <strong>mRMR feature selection</strong> to screen 258 variables, <strong>boosting AUC from 85% to 97% — a 12-point improvement</strong>.",
-                                                kr: "기존에 알려진 단백질 외 새로운 바이오마커 탐색. <strong>mRMR 기법</strong>으로 258개 변수 선택 → <strong>AUC 85%에서 97%로 12%p 향상</strong>."
-                                            },
-                                            result: { label: { en: "AUC 85% → 97% (+12pp)", kr: "AUC 85% → 97% (+12%p)" }, cls: "blue" },
-                                            tags: ["mRMR", "Python", "Feature Selection", "Genomics", "Proteomics"]
-                                        },
-                                        {
-                                            num: "④",
-                                            title: { en: "Brain Aneurysm Genomics", kr: "뇌동맥류 유전체 분석" },
-                                            desc: {
-                                                en: "Applied <strong>XGBoost weight-based feature selection</strong> on aneurysm patient genomic data. With weight ≥ 2 threshold, LR 10-fold accuracy reached <strong>0.9309</strong>. Narrowing to weight ≥ 3 dropped to 0.8417 — revealing that moderate-weight features contribute meaningfully.",
-                                                kr: "<strong>XGBoost weight 기반 변수 선택</strong> 적용. weight ≥ 2 기준 LR 10-fold 정확도 <strong>0.9309</strong>. weight ≥ 3으로 좁힐 시 0.8417로 감소 → 중간 weight 변수의 기여 확인."
-                                            },
-                                            result: { label: { en: "10-fold Acc 0.9309", kr: "10-fold 정확도 0.9309" }, cls: "blue" },
-                                            tags: ["XGBoost", "Logistic Regression", "Feature Selection", "Genomics"]
-                                        },
-                                        {
-                                            num: "⑤",
-                                            title: { en: "CKD Gait Analysis (Lead Project)", kr: "CKD 보행 분석 (주 프로젝트)" },
-                                            desc: {
-                                                en: "Lead project. Developed a <strong>CNN-based pipeline to classify CKD patients vs. healthy controls</strong> from waist/wrist IMU gait signals. Compared windowing and resampling strategies across two walking tasks. <strong>Best result: resampling + waist + ST walk — Accuracy 0.850, AUROC 0.893</strong>. Under review at EAAI. 2 domestic + 1 PCT international patents filed. </br></br>Beyond pipeline design, this project focused on understanding model failure modes — using confidence-based spectral analysis and ablation experiments (FIFS, Temporal Masking) to quantify which frequency bands and gait phases drive classification decisions.",
-                                                kr: "주도 프로젝트. 허리·손목 IMU 보행 신호에서 <strong>CNN으로 CKD 환자와 정상인을 분류</strong>. 윈도잉·리샘플링 전략 비교, 두 가지 보행 과제 실험. <strong>최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.850, AUROC 0.893</strong>. EAAI 투고 중. 국내 특허 2건 + PCT 국제특허 1건 출원.</br></br>파이프라인 설계를 넘어, 분류 확신도 기반 Spectral Analysis와 주파수/시간 구간 Ablation으로 모델이 어떤 신호를 근거로 판단하는지, 어떤 조건에서 실패하는지를 정량화했습니다."
-                                            },
-                                            result: { label: { en: "AUROC 0.893 · EAAI (Under Review)", kr: "AUROC 0.893 · EAAI 투고" }, cls: "blue" },
-                                            tags: ["CNN", "IMU", "Signal Processing", "PyTorch", "Docker", "Gait Analysis"]
-                                        },
-                                        {
-                                            num: "⑥",
-                                            title: { en: "rPPG / iPPG from Facial Video", kr: "안면 영상 기반 iPPG 예측" },
-                                            desc: {
-                                                en: "Contributed to <strong>data collection and preprocessing</strong> for a study comparing RGB and IR camera-based non-contact physiological signal (iPPG) reconstruction at 30/300 fps. The study used a CNN encoder-decoder model and was published in <em>Digital Health Research</em>.",
-                                                kr: "RGB·IR 카메라(30/300fps) 기반 비접촉 생체신호(iPPG) 재현 연구에서 <strong>데이터 수집 및 전처리</strong> 작업에 참여. CNN 인코더-디코더 모델 기반 연구로 <em>Digital Health Research</em>에 게재됨."
-                                            },
-                                            result: { label: { en: "Digital Health Research (Published)", kr: "Digital Health Research 게재" }, cls: "green" },
-                                            tags: ["rPPG", "iPPG", "Data Collection", "Preprocessing", "RGB/IR Camera"]
-                                        }
-                                    ]
-                                },
+                    kicker: {
+                            en: "Research · 2024.04 - 2026.09",
+                            kr: "연구 · 2024.04 - 2026.09"
+                        },
+                    name: { en: "Hallym University RLRC Research Center", kr: "한림대학교 RLRC 연구센터" },
+                    meta: { en: "Research Assistant · Cardiovascular Disease Research Center", kr: "연구원 · 심뇌혈관질환융합연구소" },
+                    badges: [
+                        { label: { en: "EAAI (Under Review)", kr: "EAAI 투고" }, cls: "badge-blue" },
+                        { label: { en: "3 Papers · 5 Patents · 2 Copyrights", kr: "논문 3편 · 특허 5건 · 저작권 2건" }, cls: "badge-green" }
+                    ],
+                    summary: {
+                        en: "Over a year of full-time AI research spanning <strong>six distinct clinical projects</strong>. Gained hands-on experience with Docker, remote server environments, and production-grade deep learning pipelines. Each project ranged from leading roles to supporting contributions.<br><br>Data analysis and model experiments were conducted through September 2025, followed by manuscript preparation and revision. My formal student researcher appointment ended in September 2026. A related manuscript is currently under review.",
+                        kr: "<strong>6개의 임상 AI 프로젝트</strong>를 수행하며 Docker, 원격 서버 환경, 딥러닝 파이프라인을 실전에서 익혔습니다. 주도적으로 이끈 프로젝트부터 보조로 참여한 과제까지 다양한 역할을 맡았습니다.<br><br>데이터 분석과 모델 실험은 2025년 9월까지 수행했으며, 이후에는 논문 원고 작성과 수정 작업을 이어갔습니다. 공식 학생연구자 참여는 2026년 9월에 종료되었으며, 관련 논문은 현재 심사 중입니다."
+                    },
+                    tags: ["Python", "PyTorch", "TensorFlow", "CNN", "Docker", "mRMR", "XGBoost", "pycaret", "Signal Processing"],
+                    subs: [
+                        {
+                            num: "①",
+                            title: { en: "Dysarthria Detection from Speech", kr: "구음장애 음성 분류" },
+                            desc: {
+                                en: "Built a deep learning classifier distinguishing dysarthric patients from healthy speakers using AI-HUB speech data and self-collected recordings. Deployed in a <strong>secure remote server environment (AI-HUB) via Docker</strong>. Achieved <strong>5-fold accuracy of 96.01 ± 5.02%</strong> on a single-command task. Published at IEEE ICCE 2025 and a related patent filed.",
+                                kr: "AI-HUB 음성 데이터와 자체 수집 일반인 데이터를 활용해 구음장애 환자 분류 딥러닝 모델 개발. <strong>Docker 기반 원격 서버 환경(AI-HUB)</strong> 첫 경험. 단일 명령어 기준 <strong>5-fold 정확도 96.01 ± 5.02% 달성</strong>. IEEE ICCE 2025 게재 및 관련 특허 출원."
+                            },
+                            result: { label: { en: "Acc 96.01% · IEEE ICCE 2025 · Patent", kr: "정확도 96.01% · IEEE ICCE 2025 · 특허" }, cls: "green" },
+                            tags: ["Python", "Deep Learning", "Docker", "AI-HUB", "Speech Processing"]
+                        },
+                        {
+                            num: "②",
+                            title: { en: "Sleep Stage Classification", kr: "수면 단계 분류" },
+                            desc: {
+                                en: "Supporting role in variable selection and statistical analysis for a <strong>multimodal biosignal-based sleep staging model</strong> using patch-type wearable ECG and impedance pneumography. Used pycaret for automated feature evaluation. Published in <em>Computers in Biology and Medicine</em> (SCIE), with a related patent and software copyright registered.",
+                                kr: "패치형 웨어러블 심전도(ECG) 및 임피던스 호흡 신호 기반 <strong>다중 생체신호 수면 단계 분류</strong> 모델의 변수 선택 및 통계분석 보조. pycaret 활용. <em>Computers in Biology and Medicine</em> (SCIE) 게재, 관련 특허 및 소프트웨어 저작권 등록."
+                            },
+                            result: { label: { en: "SCIE Published · Patent · S/W Copyright", kr: "SCIE 게재 · 특허 · 저작권" }, cls: "blue" },
+                            tags: ["pycaret", "Statistical Analysis", "ECG", "Multimodal Signals"]
+                        },
+                        {
+                            num: "③",
+                            title: { en: "Moyamoya Disease Genomics", kr: "모야모야병 유전체 분석" },
+                            desc: {
+                                en: "Searched for novel protein biomarkers in Moyamoya disease beyond clinically established ones. Applied <strong>mRMR feature selection</strong> to screen 258 variables, <strong>boosting AUC from 85% to 97% — a 12-point improvement</strong>.",
+                                kr: "기존에 알려진 단백질 외 새로운 바이오마커 탐색. <strong>mRMR 기법</strong>으로 258개 변수 선택 → <strong>AUC 85%에서 97%로 12%p 향상</strong>."
+                            },
+                            result: { label: { en: "AUC 85% → 97% (+12pp)", kr: "AUC 85% → 97% (+12%p)" }, cls: "blue" },
+                            tags: ["mRMR", "Python", "Feature Selection", "Genomics", "Proteomics"]
+                        },
+                        {
+                            num: "④",
+                            title: { en: "Brain Aneurysm Genomics", kr: "뇌동맥류 유전체 분석" },
+                            desc: {
+                                en: "Applied <strong>XGBoost weight-based feature selection</strong> on aneurysm patient genomic data. With weight ≥ 2 threshold, LR 10-fold accuracy reached <strong>0.9309</strong>. Narrowing to weight ≥ 3 dropped to 0.8417 — revealing that moderate-weight features contribute meaningfully.",
+                                kr: "<strong>XGBoost weight 기반 변수 선택</strong> 적용. weight ≥ 2 기준 LR 10-fold 정확도 <strong>0.9309</strong>. weight ≥ 3으로 좁힐 시 0.8417로 감소 → 중간 weight 변수의 기여 확인."
+                            },
+                            result: { label: { en: "10-fold Acc 0.9309", kr: "10-fold 정확도 0.9309" }, cls: "blue" },
+                            tags: ["XGBoost", "Logistic Regression", "Feature Selection", "Genomics"]
+                        },
+                        {
+                            num: "⑤",
+                            title: { en: "CKD Gait Analysis (Lead Project)", kr: "CKD 보행 분석 (주 프로젝트)" },
+                            desc: {
+                                en: "Lead project. Developed a <strong>CNN-based pipeline to classify CKD patients vs. healthy controls</strong> from waist/wrist IMU gait signals. Compared windowing and resampling strategies across two walking tasks. <strong>Best result: resampling + waist + ST walk — Accuracy 0.850, AUROC 0.893</strong>. Under review at EAAI. 2 domestic + 1 PCT international patents filed. </br></br>Beyond pipeline design, this project focused on understanding model failure modes — using confidence-based spectral analysis and ablation experiments (FIFS, Temporal Masking) to quantify which frequency bands and gait phases drive classification decisions.",
+                                kr: "주도 프로젝트. 허리·손목 IMU 보행 신호에서 <strong>CNN으로 CKD 환자와 정상인을 분류</strong>. 윈도잉·리샘플링 전략 비교, 두 가지 보행 과제 실험. <strong>최고 성능: 리샘플링 + 허리 + ST 보행 — Acc 0.850, AUROC 0.893</strong>. EAAI 투고 중. 국내 특허 2건 + PCT 국제특허 1건 출원.</br></br>파이프라인 설계를 넘어, 분류 확신도 기반 Spectral Analysis와 주파수/시간 구간 Ablation으로 모델이 어떤 신호를 근거로 판단하는지, 어떤 조건에서 실패하는지를 정량화했습니다."
+                            },
+                            result: { label: { en: "AUROC 0.893 · EAAI (Under Review)", kr: "AUROC 0.893 · EAAI 투고" }, cls: "blue" },
+                            tags: ["CNN", "IMU", "Signal Processing", "PyTorch", "Docker", "Gait Analysis"]
+                        },
+                        {
+                            num: "⑥",
+                            title: { en: "rPPG / iPPG from Facial Video", kr: "안면 영상 기반 iPPG 예측" },
+                            desc: {
+                                en: "Contributed to <strong>data collection and preprocessing</strong> for a study comparing RGB and IR camera-based non-contact physiological signal (iPPG) reconstruction at 30/300 fps. The study used a CNN encoder-decoder model and was published in <em>Digital Health Research</em>.",
+                                kr: "RGB·IR 카메라(30/300fps) 기반 비접촉 생체신호(iPPG) 재현 연구에서 <strong>데이터 수집 및 전처리</strong> 작업에 참여. CNN 인코더-디코더 모델 기반 연구로 <em>Digital Health Research</em>에 게재됨."
+                            },
+                            result: { label: { en: "Digital Health Research (Published)", kr: "Digital Health Research 게재" }, cls: "green" },
+                            tags: ["rPPG", "iPPG", "Data Collection", "Preprocessing", "RGB/IR Camera"]
+                        }
+                    ]
+                },
                 {
-                                    kicker: { en: "Industry Project · 2022.07 - 2022.08", kr: "기업 연계 프로젝트 · 2022.07 - 2022.08" },
-                                    name: { en: "CNC Machining Defect Analysis", kr: "CNC 공정 불량 원인 분석 및 예측" },
-                                    meta: { en: "2022 Data Youth Campus", kr: "2022 데이터 청년캠퍼스 실무 연계" },
-                                    badges: [{ label: { en: "Industry Collaboration", kr: "기업 연계" }, cls: "badge-blue" }],
-                                    summary: {
-                                        en: "Collaborated with an industry partner on a real-world CNC manufacturing project to identify the causes of machining defects. Analyzed factory data and found that <strong>70% of defects were tool-related</strong>. Although immediate application was limited by the factory's tier-1 smart environment, demonstrated a <strong>~7.5% Recall improvement</strong> by applying feature selection on alternative CNC machine data, proving the potential for future smart factory integration.",
-                                        kr: "실제 기업의 데이터를 활용해 CNC 공정 불량 원인을 분석하는 실무 프로젝트를 수행했습니다. 데이터 분석 결과 <strong>가공 불량 원인의 70%가 Tool 관련</strong>임을 규명했습니다. 해당 공정이 스마트 팩토리 1단계 수준이라 즉각적인 모델 적용은 어려웠으나, 타 기기 데이터에 변수 선택 기법을 적용해 Raw Data 대비 <strong>Recall 약 7.5% 향상</strong>을 달성했습니다."
-                                    },
-                                    tags: ["Python", "R", "Data Analysis", "Feature Selection", "Smart Factory"]
-                                },
+                    kicker: { en: "Industry Project · 2022.07 - 2022.08", kr: "기업 연계 프로젝트 · 2022.07 - 2022.08" },
+                    name: { en: "CNC Machining Defect Analysis", kr: "CNC 공정 불량 원인 분석 및 예측" },
+                    meta: { en: "2022 Data Youth Campus", kr: "2022 데이터 청년캠퍼스 실무 연계" },
+                    badges: [{ label: { en: "Industry Collaboration", kr: "기업 연계" }, cls: "badge-blue" }],
+                    summary: {
+                        en: "Collaborated with an industry partner on a real-world CNC manufacturing project to identify the causes of machining defects. Analyzed factory data and found that <strong>70% of defects were tool-related</strong>. Although immediate application was limited by the factory's tier-1 smart environment, demonstrated a <strong>~7.5% Recall improvement</strong> by applying feature selection on alternative CNC machine data, proving the potential for future smart factory integration.",
+                        kr: "실제 기업의 데이터를 활용해 CNC 공정 불량 원인을 분석하는 실무 프로젝트를 수행했습니다. 데이터 분석 결과 <strong>가공 불량 원인의 70%가 Tool 관련</strong>임을 규명했습니다. 해당 공정이 스마트 팩토리 1단계 수준이라 즉각적인 모델 적용은 어려웠으나, 타 기기 데이터에 변수 선택 기법을 적용해 Raw Data 대비 <strong>Recall 약 7.5% 향상</strong>을 달성했습니다."
+                    },
+                    tags: ["Python", "R", "Data Analysis", "Feature Selection", "Smart Factory"]
+                },
                 {
-                                    kicker: { en: "Competition · 2022.10 (Award: 2022.11)", kr: "공모전 · 2022.10 (수상: 2022.11)" },
-                                    name: { en: "Factors Affecting Postpartum Depression", kr: "산후우울감에 영향을 미치는 요인 고찰" },
-                                    meta: { en: "Team · Hallym SW Week", kr: "팀 · 한림 SW Week" },
-                                    badges: [{ label: { en: "Grand Prize · Hallym SW Week", kr: "대상 · 한림 SW Week" }, cls: "badge-gold" }],
-                                    summary: {
-                                        en: "Applied <strong>logistic regression</strong> on Korea's national postpartum care survey (public data) to identify factors associated with postpartum depression. Key findings: factors <em>increasing</em> risk (OR > 1) included infant hospitalization (OR 1.59), history of miscarriage/stillbirth, and surprisingly, use of postpartum care centers (OR 1.2). Factors <em>decreasing</em> risk (OR < 1) included number of pregnancies, maternal health during pregnancy, adequacy of postpartum recovery period, and recovery duration. Proposed policy recommendations: expanding neonatal health screening programs (addressing OR 1.59 for infant hospitalization), and ensuring sufficient guaranteed postpartum recovery time for mothers (OR 0.43 per unit increase in recovery duration).",
-                                        kr: "우리나라 산후조리실태조사 공공데이터에 <strong>로지스틱 회귀분석</strong>을 적용해 산후우울감 영향 요인을 분석했습니다. 주요 결과: <em>위험 증가 요인</em>(OR > 1) — 영아 의료기관 치료 여부(OR 1.59), 유산·사산 횟수, 산후조리원 이용 여부(OR 1.2, 이용 시 오히려 증가). <em>위험 감소 요인</em>(OR < 1) — 임신 횟수, 임신 기간 산모 건강, 산후조리 기간 적당 여부, 산후조리 기간. 개선 방안으로 <strong>영유아 정밀 검진 정책 홍보 및 검진 항목 확대</strong>, <strong>충분한 산후조리 기간 보장 방안 마련</strong>을 제안했습니다."
-                                    },
-                                    tags: ["R", "Logistic Regression", "Public Data", "Odds Ratio", "Statistical Analysis"]
-                                },
+                    kicker: { en: "Competition · 2022.10 (Award: 2022.11)", kr: "공모전 · 2022.10 (수상: 2022.11)" },
+                    name: { en: "Factors Affecting Postpartum Depression", kr: "산후우울감에 영향을 미치는 요인 고찰" },
+                    meta: { en: "Team · Hallym SW Week", kr: "팀 · 한림 SW Week" },
+                    badges: [{ label: { en: "Grand Prize · Hallym SW Week", kr: "대상 · 한림 SW Week" }, cls: "badge-gold" }],
+                    summary: {
+                        en: "Applied <strong>logistic regression</strong> on Korea's national postpartum care survey (public data) to identify factors associated with postpartum depression. Key findings: factors <em>increasing</em> risk (OR > 1) included infant hospitalization (OR 1.59), history of miscarriage/stillbirth, and surprisingly, use of postpartum care centers (OR 1.2). Factors <em>decreasing</em> risk (OR < 1) included number of pregnancies, maternal health during pregnancy, adequacy of postpartum recovery period, and recovery duration. Proposed policy recommendations: expanding neonatal health screening programs (addressing OR 1.59 for infant hospitalization), and ensuring sufficient guaranteed postpartum recovery time for mothers (OR 0.43 per unit increase in recovery duration).",
+                        kr: "우리나라 산후조리실태조사 공공데이터에 <strong>로지스틱 회귀분석</strong>을 적용해 산후우울감 영향 요인을 분석했습니다. 주요 결과: <em>위험 증가 요인</em>(OR > 1) — 영아 의료기관 치료 여부(OR 1.59), 유산·사산 횟수, 산후조리원 이용 여부(OR 1.2, 이용 시 오히려 증가). <em>위험 감소 요인</em>(OR < 1) — 임신 횟수, 임신 기간 산모 건강, 산후조리 기간 적당 여부, 산후조리 기간. 개선 방안으로 <strong>영유아 정밀 검진 정책 홍보 및 검진 항목 확대</strong>, <strong>충분한 산후조리 기간 보장 방안 마련</strong>을 제안했습니다."
+                    },
+                    tags: ["R", "Logistic Regression", "Public Data", "Odds Ratio", "Statistical Analysis"]
+                },
                 {
-                                    kicker: { en: "Team Project · 2023.08 - 2023.12", kr: "팀 프로젝트 · 2023.08 - 2023.12" },
-                                    name: { en: "AI-Powered Home Workout Assistant Web App", kr: "웹캠 동작 인식 기반 홈트레이닝 보조 웹 서비스" },
-                                    meta: { en: "Frontend Developer & UI/UX Designer", kr: "프론트엔드 개발 및 UI/UX 디자인" },
-                                    badges: [{ label: { en: "Web Application", kr: "웹 서비스 개발" }, cls: "badge-blue" }],
-                                    summary: {
-                                        en: "Developed a web application that tracks user movements via a laptop webcam to assist with home workouts. <strong>Led the UI/UX design using Figma</strong> and implemented a fully responsive frontend using React. Handled backend integration via Firebase, managing real-time user authentication (sign-up/login) and database syncing for workout records.",
-                                        kr: "노트북 웹캠으로 사용자의 동작을 인식하여 운동을 보조하는 웹 애플리케이션을 개발했습니다. <strong>Figma를 활용해 UI/UX를 기획</strong>하고 React로 반응형 웹을 구현했습니다. Firebase를 연동하여 실시간 사용자 인증(회원가입/로그인) 및 운동 기록 데이터베이스를 구축했습니다."
-                                    },
-                                    tags: ["React", "Firebase", "Figma", "UI/UX", "Responsive Web", "Frontend"]
-                                },
+                    kicker: { en: "Team Project · 2023.08 - 2023.12", kr: "팀 프로젝트 · 2023.08 - 2023.12" },
+                    name: { en: "AI-Powered Home Workout Assistant Web App", kr: "웹캠 동작 인식 기반 홈트레이닝 보조 웹 서비스" },
+                    meta: { en: "Frontend Developer & UI/UX Designer", kr: "프론트엔드 개발 및 UI/UX 디자인" },
+                    badges: [{ label: { en: "Web Application", kr: "웹 서비스 개발" }, cls: "badge-blue" }],
+                    summary: {
+                        en: "Developed a web application that tracks user movements via a laptop webcam to assist with home workouts. <strong>Led the UI/UX design using Figma</strong> and implemented a fully responsive frontend using React. Handled backend integration via Firebase, managing real-time user authentication (sign-up/login) and database syncing for workout records.",
+                        kr: "노트북 웹캠으로 사용자의 동작을 인식하여 운동을 보조하는 웹 애플리케이션을 개발했습니다. <strong>Figma를 활용해 UI/UX를 기획</strong>하고 React로 반응형 웹을 구현했습니다. Firebase를 연동하여 실시간 사용자 인증(회원가입/로그인) 및 운동 기록 데이터베이스를 구축했습니다."
+                    },
+                    tags: ["React", "Firebase", "Figma", "UI/UX", "Responsive Web", "Frontend"]
+                },
                 {
-                                    kicker: { en: "Hackathon · 2021.01 · 4 weeks (Award: 2021.02)", kr: "해커톤 · 2021.01 · 4주 (수상: 2021.02)" },
-                                    name: { en: "OP.GG Game Big Data Hackathon", kr: "OP.GG 게임 빅데이터 해커톤" },
-                                    meta: { en: "Team Leader · Hallym University × OP.GG", kr: "팀장 · 한림대학교 × OP.GG" },
-                                    badges: [{ label: { en: "Grand Prize", kr: "최우수상" }, cls: "badge-gold" }, { label: { en: "Excellence Award · OP.GG", kr: "우수상 · OP.GG" }, cls: "badge-blue" }],
-                                    summary: {
-                                        en: "My first meaningful coding experience as a team leader. Built a <strong>champion duo win-rate recommendation system</strong> for League of Legends bot lane — a feature not yet offered on OP.GG at the time. Starting from near-zero experience, the 4-week sprint grew my skills tenfold. Collected <strong>10GB+ of text data</strong> from Brazil's high-tier server via the Riot API, handling deduplication of game IDs, rate-limit retries, and cross-language data pipelines. The feature was later launched by OP.GG.",
-                                        kr: "팀장으로 처음으로 코딩에 의미를 느낀 경험. 당시 OP.GG에서 제공하지 않던 <strong>바텀 챔피언 조합별 승률 추천 시스템</strong>을 제안하고 개발했습니다. Python 기초만 알던 상태에서 4주 만에 실력이 10배 성장했습니다. Riot API로 브라질 서버 데이터 <strong>텍스트 10GB+</strong>를 수집하고, 게임 ID 중복 제거 및 분당 수집 제한 재시도 처리를 구현했습니다. 이후 OP.GG에서 동일 서비스 출시 확인."
-                                    },
-                                    tags: ["Python", "R", "Riot API", "REST API", "Data Deduplication", "Statistical Analysis"]
-                                },
+                    kicker: { en: "Hackathon · 2021.01 · 4 weeks (Award: 2021.02)", kr: "해커톤 · 2021.01 · 4주 (수상: 2021.02)" },
+                    name: { en: "OP.GG Game Big Data Hackathon", kr: "OP.GG 게임 빅데이터 해커톤" },
+                    meta: { en: "Team Leader · Hallym University × OP.GG", kr: "팀장 · 한림대학교 × OP.GG" },
+                    badges: [{ label: { en: "Grand Prize", kr: "최우수상" }, cls: "badge-gold" }, { label: { en: "Excellence Award · OP.GG", kr: "우수상 · OP.GG" }, cls: "badge-blue" }],
+                    summary: {
+                        en: "My first meaningful coding experience as a team leader. Built a <strong>champion duo win-rate recommendation system</strong> for League of Legends bot lane — a feature not yet offered on OP.GG at the time. Starting from near-zero experience, the 4-week sprint grew my skills tenfold. Collected <strong>10GB+ of text data</strong> from Brazil's high-tier server via the Riot API, handling deduplication of game IDs, rate-limit retries, and cross-language data pipelines. The feature was later launched by OP.GG.",
+                        kr: "팀장으로 처음으로 코딩에 의미를 느낀 경험. 당시 OP.GG에서 제공하지 않던 <strong>바텀 챔피언 조합별 승률 추천 시스템</strong>을 제안하고 개발했습니다. Python 기초만 알던 상태에서 4주 만에 실력이 10배 성장했습니다. Riot API로 브라질 서버 데이터 <strong>텍스트 10GB+</strong>를 수집하고, 게임 ID 중복 제거 및 분당 수집 제한 재시도 처리를 구현했습니다. 이후 OP.GG에서 동일 서비스 출시 확인."
+                    },
+                    tags: ["Python", "R", "Riot API", "REST API", "Data Deduplication", "Statistical Analysis"]
+                },
                 {
-                                    kicker: { en: "Competition · 2021.11", kr: "공모전 · 2021.11" },
-                                    name: { en: "Sejong Housing Market Analysis", kr: "세종시 주택시장 분석 공모전" },
-                                    meta: { en: "Team · Participant-only dataset", kr: "팀 참가 · 참가자 공개 데이터" },
-                                    badges: [{ label: { en: "Participant", kr: "참가" }, cls: "badge-gray" }],
-                                    summary: {
-                                        en: "Analyzed Sejong City's housing market using a participant-exclusive open dataset. Combined residential price data with nearby business density (restaurants, hospitals, etc.) to explore spatial correlates of housing value by district. A valuable experience in spatial data integration and multi-source analysis.",
-                                        kr: "참가자에게만 공개된 데이터를 활용해 세종시 지역별 주택 가격과 주변 업종(음식점, 병원 등) 분포의 상관관계를 분석했습니다. 공간 데이터와 가격 데이터를 결합하는 다중 출처 분석 경험을 쌓을 수 있었습니다."
-                                    },
-                                    tags: ["R", "Spatial Analysis", "Public Data", "EDA", "Visualization"]
-                                }
+                    kicker: { en: "Competition · 2021.11", kr: "공모전 · 2021.11" },
+                    name: { en: "Sejong Housing Market Analysis", kr: "세종시 주택시장 분석 공모전" },
+                    meta: { en: "Team · Participant-only dataset", kr: "팀 참가 · 참가자 공개 데이터" },
+                    badges: [{ label: { en: "Participant", kr: "참가" }, cls: "badge-gray" }],
+                    summary: {
+                        en: "Analyzed Sejong City's housing market using a participant-exclusive open dataset. Combined residential price data with nearby business density (restaurants, hospitals, etc.) to explore spatial correlates of housing value by district. A valuable experience in spatial data integration and multi-source analysis.",
+                        kr: "참가자에게만 공개된 데이터를 활용해 세종시 지역별 주택 가격과 주변 업종(음식점, 병원 등) 분포의 상관관계를 분석했습니다. 공간 데이터와 가격 데이터를 결합하는 다중 출처 분석 경험을 쌓을 수 있었습니다."
+                    },
+                    tags: ["R", "Spatial Analysis", "Public Data", "EDA", "Visualization"]
+                }
             ]
         };
 
@@ -2144,7 +2220,7 @@
                 return `<div class="skill-item"><div class="skill-category">${i >= 0 ? s.slice(0, i).trim() : ''}</div><div class="skill-content">${i >= 0 ? s.slice(i + 1).trim() : s}</div></div>`;
             }).join(''));
         }
-        
+
 
         /* ── UI EVENTS ── */
         $('theme-light').onclick = () => setTheme(false);
@@ -2196,58 +2272,96 @@
 
         /* ── SECURITY: COPY / CUT / CONTEXT MENU / SHORTCUTS ── */
         // 페이지는 자유롭게 열람할 수 있지만, 일반적인 복사·붙여넣기 경로는 차단합니다.
-        document.addEventListener('copy', (e) => {
-            e.preventDefault();
+        // 복사를 허용할 영역
+        const copyAllowedSelector = [
+            '.contact-item',
+            '.mobile-contact',
+            '.copy-allowed'
+        ].join(', ');
+
+        function isCopyAllowed(event) {
+            const target = event.target;
+
+            // 우클릭하거나 키보드로 접근한 위치 확인
+            if (
+                target instanceof Element &&
+                target.closest(copyAllowedSelector)
+            ) {
+                return true;
+            }
+
+            // 선택한 텍스트가 허용 영역 안에 있는지 확인
+            const selection = window.getSelection();
+
+            if (!selection || selection.isCollapsed || !selection.rangeCount) {
+                return false;
+            }
+
+            const range = selection.getRangeAt(0);
+
+            const getAllowedArea = node => {
+                const element = node instanceof Element
+                    ? node
+                    : node?.parentElement;
+
+                return element?.closest(copyAllowedSelector);
+            };
+
+            const startArea = getAllowedArea(range.startContainer);
+            const endArea = getAllowedArea(range.endContainer);
+
+            return Boolean(startArea && startArea === endArea);
+        }
+
+        ['copy', 'cut', 'contextmenu', 'dragstart'].forEach(type => {
+            document.addEventListener(type, event => {
+                if (!isCopyAllowed(event)) {
+                    event.preventDefault();
+                }
+            });
         });
 
-        document.addEventListener('cut', (e) => {
-            e.preventDefault();
-        });
+        document.addEventListener('keydown', event => {
+            const key = event.key.toLowerCase();
+            const modifier = event.ctrlKey || event.metaKey;
 
-        document.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-        });
-
-        document.addEventListener('dragstart', (e) => {
-            e.preventDefault();
-        });
-
-        document.addEventListener('keydown', (e) => {
-            const key = e.key.toLowerCase();
-
-            // Ctrl/Cmd + C/X: 복사·잘라내기 차단
-            if ((e.ctrlKey || e.metaKey) && ['c', 'x'].includes(key)) {
-                e.preventDefault();
-                e.stopPropagation();
+            // 허용 영역에서는 복사·잘라내기 가능
+            if (modifier && ['c', 'x'].includes(key)) {
+                if (!isCopyAllowed(event)) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
                 return;
             }
 
-            // Ctrl/Cmd + S/U/P: 저장·소스보기·인쇄 차단
-            if ((e.ctrlKey || e.metaKey) && ['s', 'u', 'p'].includes(key)) {
-                e.preventDefault();
-                e.stopPropagation();
+            // 기존 저장·소스 보기·인쇄 단축키 차단 유지
+            if (modifier && ['s', 'u', 'p'].includes(key)) {
+                event.preventDefault();
+                event.stopPropagation();
             }
 
-            // F12 / Ctrl+Shift+I: 개발자 도구 단축키 차단
-            if (e.key === 'F12' || ((e.ctrlKey || e.metaKey) && e.shiftKey && key === 'i')) {
-                e.preventDefault();
-                e.stopPropagation();
+            if (
+                event.key === 'F12' ||
+                (modifier && event.shiftKey && key === 'i')
+            ) {
+                event.preventDefault();
+                event.stopPropagation();
             }
         });
         // [자동 폰트 적용] 텍스트에 한글이 없는지 검사하여 프리텐다드(.eng) 적용
         window.addEventListener('DOMContentLoaded', () => {
             // 글자가 들어갈 수 있는 모든 주요 태그를 선택
             const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, li, div, button');
-            
+
             textElements.forEach(el => {
                 const text = el.textContent.trim();
-                
+
                 if (text.length > 0) {
                     // 한글(자음, 모음, 완성형 글자)이 하나라도 섞여 있는지 확인
                     const hasKorean = /[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(text);
                     // 영어 알파벳이 포함되어 있는지 확인
                     const hasEnglish = /[a-zA-Z]/.test(text);
-                    
+
                     // 한글이 단 하나도 없고, 영어가 포함된 순수 영문 블록에만 eng 클래스를 자동 추가
                     if (!hasKorean && hasEnglish) {
                         el.classList.add('eng');
